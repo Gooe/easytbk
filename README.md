@@ -5,7 +5,7 @@
 淘宝联盟、京东联盟、多多进宝、唯品客、苏宁推客SDK封装
 
 # 安装
-1、安装扩展包，该扩展包只支持laravel
+1、安装扩展包
 
 ```bash
 composer require yeardley/easytbk
@@ -84,7 +84,7 @@ $pidNameList2 = array();
 $pidNameList2[0] = "value";
 $pidGenRequest1->pidNameList = $pidNameList2;
 $pidGenRequest1->requestId = "requestId";
-dd($service->genPidWithOauth($pidGenRequest1));
+print_r($service->genPidWithOauth($pidGenRequest1));
 ```
 
 5、苏宁连联盟SDK初始化
@@ -103,5 +103,5 @@ $req->setPageNo("1");
 $req->setPageSize("10");
 $req->setPositionId("12");
 $resp = $c->execute($req);
-dd($resp);
+print_r($resp);
 ```
