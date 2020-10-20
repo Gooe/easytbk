@@ -1,10 +1,20 @@
 {
     "name": "yeardley/easytbk",
     "type": "library",
-    "description": "淘客六合一SDK，支持淘宝联盟、京东联盟、多多进宝、唯品会、苏宁、蘑菇街. 微信:bugfixed",
+    "description": "淘客六合一SDK，支持淘宝联盟、京东联盟、多多进宝、唯品会、苏宁、蘑菇街. 改自 <https://github.com/niugengyun/easytbk>",
     "keywords": [
         "淘宝客",
-        "淘宝客SDK"
+        "淘宝客SDK",
+        "京东SDK",
+        "京东联盟",
+        "多多进宝",
+        "拼多多",
+        "拼多多联盟",
+        "拼多多SDK",
+        "唯品会",
+        "唯品会SDK",
+        "苏宁",
+        "苏宁SDK"
     ],
     "homepage": "https://github.com/yeardley/easytbk",
     "license": "MIT",
