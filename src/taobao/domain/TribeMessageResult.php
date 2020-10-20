@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace YearDley\EasyTBK\TaoBao\Domain;
 
 /**
  * 返回结构
@@ -8,15 +8,16 @@ namespace NiuGengYun\EasyTBK\TaoBao\Domain;
  */
 class TribeMessageResult
 {
-	
-	/** 
-	 * 消息列表
-	 **/
-	public $messages;
-	
-	/** 
-	 * 迭代key
-	 **/
-	public $next_key;	
+
+    /**
+     * 消息列表
+     **/
+    public $messages;
+
+    /**
+     * 迭代key
+     **/
+    public $next_key;
 }
+
 ?>

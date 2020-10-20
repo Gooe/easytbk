@@ -8,117 +8,118 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class VipLinkCheckReq {
+class VipLinkCheckReq
+{
 
-	static $_TSPEC;
-	public $source = null;
-	public $content = null;
+    static $_TSPEC;
+    public $source = null;
+    public $content = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'source'
-			),
-			2 => array(
-			'var' => 'content'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'source'
+                ),
+                2 => array(
+                    'var' => 'content'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
-
-
-			if (isset($vals['source'])){
-
-				$this->source = $vals['source'];
-			}
+        if (is_array($vals)) {
 
 
-			if (isset($vals['content'])){
+            if (isset($vals['source'])) {
 
-				$this->content = $vals['content'];
-			}
-
-
-		}
-
-	}
+                $this->source = $vals['source'];
+            }
 
 
-	public function getName(){
+            if (isset($vals['content'])) {
 
-		return 'VipLinkCheckReq';
-	}
-
-	public function read($input){
-
-		$input->readStructBegin();
-		while(true){
-
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+                $this->content = $vals['content'];
+            }
 
 
-			if ("source" == $schemeField){
+        }
 
-				$needSkip = false;
-				$input->readString($this->source);
-
-			}
+    }
 
 
+    public function getName()
+    {
+
+        return 'VipLinkCheckReq';
+    }
+
+    public function read($input)
+    {
+
+        $input->readStructBegin();
+        while (true) {
+
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("content" == $schemeField){
+            if ("source" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->content);
+                $needSkip = false;
+                $input->readString($this->source);
 
-			}
-
-
-
-			if($needSkip){
-
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
-
-			$input->readFieldEnd();
-		}
-
-		$input->readStructEnd();
+            }
 
 
+            if ("content" == $schemeField) {
 
-	}
+                $needSkip = false;
+                $input->readString($this->content);
 
-	public function write($output){
+            }
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
 
-		$xfer += $output->writeFieldBegin('source');
-		$xfer += $output->writeString($this->source);
+            if ($needSkip) {
 
-		$xfer += $output->writeFieldEnd();
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-		$xfer += $output->writeFieldBegin('content');
-		$xfer += $output->writeString($this->content);
+            $input->readFieldEnd();
+        }
 
-		$xfer += $output->writeFieldEnd();
+        $input->readStructEnd();
 
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+
+    }
+
+    public function write($output)
+    {
+
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
+
+        $xfer += $output->writeFieldBegin('source');
+        $xfer += $output->writeString($this->source);
+
+        $xfer += $output->writeFieldEnd();
+
+        $xfer += $output->writeFieldBegin('content');
+        $xfer += $output->writeString($this->content);
+
+        $xfer += $output->writeFieldEnd();
+
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

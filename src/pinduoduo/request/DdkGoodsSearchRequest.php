@@ -1,8 +1,8 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkGoodsSearchRequest implements RequestInterface
@@ -103,7 +103,6 @@ class DdkGoodsSearchRequest implements RequestInterface
      * @var
      */
     private $activityTags;
-
 
 
     public function setKeyWord($keyword)
@@ -213,7 +212,7 @@ class DdkGoodsSearchRequest implements RequestInterface
     /**
      * @param mixed $pid
      */
-    public function setPid($pid): void
+    public function setPid($pid)
     {
         $this->pid = $pid;
     }

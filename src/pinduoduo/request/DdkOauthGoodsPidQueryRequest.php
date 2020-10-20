@@ -1,7 +1,8 @@
 <?php
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
+
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkOauthGoodsPidQueryRequest implements RequestInterface
@@ -12,7 +13,6 @@ class DdkOauthGoodsPidQueryRequest implements RequestInterface
     private $page;
 
     private $pageSize;
-
 
 
     public function setPage($page)
@@ -40,9 +40,9 @@ class DdkOauthGoodsPidQueryRequest implements RequestInterface
     public function getParams()
     {
         $params = [
-            'type'      => $this->type,
+            'type' => $this->type,
             'page_size' => $this->pageSize,
-            'page'      => $this->page,
+            'page' => $this->page,
         ];
         return array_filter($params);
     }

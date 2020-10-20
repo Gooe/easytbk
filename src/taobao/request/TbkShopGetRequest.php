@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.shop.get request
  *
@@ -266,8 +267,8 @@ class TbkShopGetRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->fields, "fields");
-        RequestCheckUtil::checkNotNull ($this->q, "q");
+        RequestCheckUtil::checkNotNull($this->fields, "fields");
+        RequestCheckUtil::checkNotNull($this->q, "q");
     }
 
     public function putOtherTextParam($key, $value)

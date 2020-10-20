@@ -20,7 +20,7 @@
  * @package thrift.protocol
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSON;
+namespace YearDley\EasyTBK\Vip\Osp\Protocol\JSON;
 
 class BaseContext
 {
@@ -37,10 +37,12 @@ class BaseContext
     {
     }
 
-    function isColon_() {
-		return false;
-	}
+    function isColon_()
+    {
+        return false;
+    }
 
-	function setColon_($colon_) {
-	}
+    function setColon_($colon_)
+    {
+    }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
 /**
  * TOP API: taobao.topats.task.delete request
  *

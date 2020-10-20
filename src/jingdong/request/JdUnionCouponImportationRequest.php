@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionCouponImportationRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionCouponImportationRequest implements RequestInterface
 {
@@ -41,7 +41,7 @@ class JdUnionCouponImportationRequest implements RequestInterface
     /**
      * @param mixed $skuId
      */
-    public function setSkuId($skuId): void
+    public function setSkuId($skuId)
     {
         $this->skuId = $skuId;
     }
@@ -57,7 +57,7 @@ class JdUnionCouponImportationRequest implements RequestInterface
     /**
      * @param mixed $couponLink
      */
-    public function setCouponLink($couponLink): void
+    public function setCouponLink($couponLink)
     {
         $this->couponLink = $couponLink;
     }
@@ -81,7 +81,7 @@ class JdUnionCouponImportationRequest implements RequestInterface
         ];
 
         return json_encode([
-            'couponReq' => array_filter ($params, function ($val) {
+            'couponReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

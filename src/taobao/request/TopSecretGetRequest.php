@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.top.secret.get request
  *
@@ -74,7 +75,7 @@ class TopSecretGetRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->randomNum, "randomNum");
+        RequestCheckUtil::checkNotNull($this->randomNum, "randomNum");
     }
 
     public function putOtherTextParam($key, $value)

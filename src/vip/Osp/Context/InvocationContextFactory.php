@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Context;
+namespace YearDley\EasyTBK\Vip\Osp\Context;
 
 /**
  * 获取调用上下文环境工厂类
@@ -8,11 +8,13 @@ namespace NiuGengYun\EasyTBK\Vip\Osp\Context;
  * @author Jamin.li
  *
  */
-class InvocationContextFactory {
-	/**
-	 * 获取实例
-	 */
-	public static function getInstance() {
-		return InvocationContext::getInstance ();
-	}
+class InvocationContextFactory
+{
+    /**
+     * 获取实例
+     */
+    public static function getInstance()
+    {
+        return InvocationContext::getInstance();
+    }
 }

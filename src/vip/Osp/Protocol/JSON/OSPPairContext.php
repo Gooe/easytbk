@@ -20,24 +20,28 @@
  * @package thrift.protocol
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSON;
+namespace YearDley\EasyTBK\Vip\Osp\Protocol\JSON;
 
-use NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext;
-use NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSONProtocol;
+use YearDley\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext;
+use YearDley\EasyTBK\Vip\Osp\Protocol\JSONProtocol;
 
-class OSPPairContext extends BaseContext {
+class OSPPairContext extends BaseContext
+{
     private $first_ = true;
     private $p_ = null;
 
-    public function __construct($p) {
+    public function __construct($p)
+    {
         $this->p_ = $p;
     }
 
-    public function write() {
+    public function write()
+    {
         parent::write();
     }
 
-    public function read() {
+    public function read()
+    {
         if ($this->first_) {
             $this->first_ = false;
         } else {

@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace YearDley\EasyTBK\TaoBao\Domain;
 
 /**
  * 消息节点
@@ -8,15 +8,16 @@ namespace NiuGengYun\EasyTBK\TaoBao\Domain;
  */
 class RoamingMessageItem
 {
-	
-	/** 
-	 * 节点类型
-	 **/
-	public $type;
-	
-	/** 
-	 * 值
-	 **/
-	public $value;	
+
+    /**
+     * 节点类型
+     **/
+    public $type;
+
+    /**
+     * 值
+     **/
+    public $value;
 }
+
 ?>

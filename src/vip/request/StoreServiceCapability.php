@@ -8,125 +8,126 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class StoreServiceCapability {
+class StoreServiceCapability
+{
 
-	static $_TSPEC;
-	public $storeScore = null;
-	public $storeRankRate = null;
+    static $_TSPEC;
+    public $storeScore = null;
+    public $storeRankRate = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'storeScore'
-			),
-			2 => array(
-			'var' => 'storeRankRate'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'storeScore'
+                ),
+                2 => array(
+                    'var' => 'storeRankRate'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
-
-
-			if (isset($vals['storeScore'])){
-
-				$this->storeScore = $vals['storeScore'];
-			}
+        if (is_array($vals)) {
 
 
-			if (isset($vals['storeRankRate'])){
+            if (isset($vals['storeScore'])) {
 
-				$this->storeRankRate = $vals['storeRankRate'];
-			}
-
-
-		}
-
-	}
+                $this->storeScore = $vals['storeScore'];
+            }
 
 
-	public function getName(){
+            if (isset($vals['storeRankRate'])) {
 
-		return 'StoreServiceCapability';
-	}
-
-	public function read($input){
-
-		$input->readStructBegin();
-		while(true){
-
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+                $this->storeRankRate = $vals['storeRankRate'];
+            }
 
 
-			if ("storeScore" == $schemeField){
+        }
 
-				$needSkip = false;
-				$input->readString($this->storeScore);
-
-			}
+    }
 
 
+    public function getName()
+    {
+
+        return 'StoreServiceCapability';
+    }
+
+    public function read($input)
+    {
+
+        $input->readStructBegin();
+        while (true) {
+
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("storeRankRate" == $schemeField){
+            if ("storeScore" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->storeRankRate);
+                $needSkip = false;
+                $input->readString($this->storeScore);
 
-			}
-
-
-
-			if($needSkip){
-
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
-
-			$input->readFieldEnd();
-		}
-
-		$input->readStructEnd();
+            }
 
 
+            if ("storeRankRate" == $schemeField) {
 
-	}
+                $needSkip = false;
+                $input->readString($this->storeRankRate);
 
-	public function write($output){
-
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
-
-		if($this->storeScore !== null) {
-
-			$xfer += $output->writeFieldBegin('storeScore');
-			$xfer += $output->writeString($this->storeScore);
-
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
 
-		if($this->storeRankRate !== null) {
+            if ($needSkip) {
 
-			$xfer += $output->writeFieldBegin('storeRankRate');
-			$xfer += $output->writeString($this->storeRankRate);
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $input->readFieldEnd();
+        }
+
+        $input->readStructEnd();
 
 
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+    }
+
+    public function write($output)
+    {
+
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
+
+        if ($this->storeScore !== null) {
+
+            $xfer += $output->writeFieldBegin('storeScore');
+            $xfer += $output->writeString($this->storeScore);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        if ($this->storeRankRate !== null) {
+
+            $xfer += $output->writeFieldBegin('storeRankRate');
+            $xfer += $output->writeString($this->storeRankRate);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

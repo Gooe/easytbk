@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionGoodsSeckillQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionGoodsSeckillQueryRequest implements RequestInterface
 {
@@ -113,7 +113,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $secKillPriceFrom
      */
-    public function setSecKillPriceFrom($secKillPriceFrom): void
+    public function setSecKillPriceFrom($secKillPriceFrom)
     {
         $this->secKillPriceFrom = $secKillPriceFrom;
     }
@@ -129,7 +129,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $skuIds
      */
-    public function setSkuIds($skuIds): void
+    public function setSkuIds($skuIds)
     {
         $this->skuIds = $skuIds;
     }
@@ -145,7 +145,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $sort
      */
-    public function setSort($sort): void
+    public function setSort($sort)
     {
         $this->sort = $sort;
     }
@@ -161,7 +161,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $isBeginSecKill
      */
-    public function setIsBeginSecKill($isBeginSecKill): void
+    public function setIsBeginSecKill($isBeginSecKill)
     {
         $this->isBeginSecKill = $isBeginSecKill;
     }
@@ -177,7 +177,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $pageSize
      */
-    public function setPageSize($pageSize): void
+    public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
     }
@@ -193,7 +193,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $cid3
      */
-    public function setCid3($cid3): void
+    public function setCid3($cid3)
     {
         $this->cid3 = $cid3;
     }
@@ -209,7 +209,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $cid2
      */
-    public function setCid2($cid2): void
+    public function setCid2($cid2)
     {
         $this->cid2 = $cid2;
     }
@@ -225,7 +225,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $cid1
      */
-    public function setCid1($cid1): void
+    public function setCid1($cid1)
     {
         $this->cid1 = $cid1;
     }
@@ -241,7 +241,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $secKillPriceTo
      */
-    public function setSecKillPriceTo($secKillPriceTo): void
+    public function setSecKillPriceTo($secKillPriceTo)
     {
         $this->secKillPriceTo = $secKillPriceTo;
     }
@@ -257,7 +257,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $sortName
      */
-    public function setSortName($sortName): void
+    public function setSortName($sortName)
     {
         $this->sortName = $sortName;
     }
@@ -273,7 +273,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $pageIndex
      */
-    public function setPageIndex($pageIndex): void
+    public function setPageIndex($pageIndex)
     {
         $this->pageIndex = $pageIndex;
     }
@@ -289,7 +289,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $commissionShareFrom
      */
-    public function setCommissionShareFrom($commissionShareFrom): void
+    public function setCommissionShareFrom($commissionShareFrom)
     {
         $this->commissionShareFrom = $commissionShareFrom;
     }
@@ -305,7 +305,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $commissionShareTo
      */
-    public function setCommissionShareTo($commissionShareTo): void
+    public function setCommissionShareTo($commissionShareTo)
     {
         $this->commissionShareTo = $commissionShareTo;
     }
@@ -321,11 +321,10 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
     /**
      * @param mixed $owner
      */
-    public function setOwner($owner): void
+    public function setOwner($owner)
     {
         $this->owner = $owner;
     }
-
 
 
     /**
@@ -359,7 +358,7 @@ class JdUnionGoodsSeckillQueryRequest implements RequestInterface
         ];
 
         return json_encode([
-            'goodsReq' => array_filter ($params, function ($val) {
+            'goodsReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

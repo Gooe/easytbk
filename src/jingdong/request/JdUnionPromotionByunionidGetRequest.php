@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionPromotionByunionidGetRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionPromotionByunionidGetRequest implements RequestInterface
 {
@@ -71,7 +71,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $subUnionId
      */
-    public function setSubUnionId($subUnionId): void
+    public function setSubUnionId($subUnionId)
     {
         $this->subUnionId = $subUnionId;
     }
@@ -88,7 +88,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $materialId
      */
-    public function setMaterialId($materialId): void
+    public function setMaterialId($materialId)
     {
         $this->materialId = $materialId;
     }
@@ -104,7 +104,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $positionId
      */
-    public function setPositionId($positionId): void
+    public function setPositionId($positionId)
     {
         $this->positionId = $positionId;
     }
@@ -120,7 +120,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $unionId
      */
-    public function setUnionId($unionId): void
+    public function setUnionId($unionId)
     {
         $this->unionId = $unionId;
     }
@@ -136,7 +136,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $pid
      */
-    public function setPid($pid): void
+    public function setPid($pid)
     {
         $this->pid = $pid;
     }
@@ -152,7 +152,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $couponUrl
      */
-    public function setCouponUrl($couponUrl): void
+    public function setCouponUrl($couponUrl)
     {
         $this->couponUrl = $couponUrl;
     }
@@ -168,7 +168,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     /**
      * @param mixed $chainType
      */
-    public function setChainType($chainType): void
+    public function setChainType($chainType)
     {
         $this->chainType = $chainType;
     }

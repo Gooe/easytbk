@@ -8,542 +8,516 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
-
-class RefundOrderInfo {
-
-	static $_TSPEC;
-	public $orderSn = null;
-	public $applyTime = null;
-	public $refundType = null;
-	public $commissionTotalCost = null;
-	public $commission = null;
-	public $goodsCount = null;
-	public $commissionEnterTxn = null;
-	public $commissionEnterTime = null;
-	public $commissionSettledTime = null;
-	public $refundOrderDetails = null;
-	public $userId = null;
-	public $orderTime = null;
-	public $originCommEnterTime = null;
-	public $originCommEnterTxn = null;
-	public $settled = null;
+namespace YearDley\EasyTBK\Vip\Request;
+
+class RefundOrderInfo
+{
+
+    static $_TSPEC;
+    public $orderSn = null;
+    public $applyTime = null;
+    public $refundType = null;
+    public $commissionTotalCost = null;
+    public $commission = null;
+    public $goodsCount = null;
+    public $commissionEnterTxn = null;
+    public $commissionEnterTime = null;
+    public $commissionSettledTime = null;
+    public $refundOrderDetails = null;
+    public $userId = null;
+    public $orderTime = null;
+    public $originCommEnterTime = null;
+    public $originCommEnterTxn = null;
+    public $settled = null;
+
+    public function __construct($vals = null)
+    {
 
-	public function __construct($vals=null){
+        if (!isset(self::$_TSPEC)) {
 
-		if (!isset(self::$_TSPEC)){
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'orderSn'
+                ),
+                2 => array(
+                    'var' => 'applyTime'
+                ),
+                3 => array(
+                    'var' => 'refundType'
+                ),
+                4 => array(
+                    'var' => 'commissionTotalCost'
+                ),
+                5 => array(
+                    'var' => 'commission'
+                ),
+                6 => array(
+                    'var' => 'goodsCount'
+                ),
+                7 => array(
+                    'var' => 'commissionEnterTxn'
+                ),
+                8 => array(
+                    'var' => 'commissionEnterTime'
+                ),
+                9 => array(
+                    'var' => 'commissionSettledTime'
+                ),
+                11 => array(
+                    'var' => 'refundOrderDetails'
+                ),
+                12 => array(
+                    'var' => 'userId'
+                ),
+                13 => array(
+                    'var' => 'orderTime'
+                ),
+                14 => array(
+                    'var' => 'originCommEnterTime'
+                ),
+                15 => array(
+                    'var' => 'originCommEnterTxn'
+                ),
+                16 => array(
+                    'var' => 'settled'
+                ),
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'orderSn'
-			),
-			2 => array(
-			'var' => 'applyTime'
-			),
-			3 => array(
-			'var' => 'refundType'
-			),
-			4 => array(
-			'var' => 'commissionTotalCost'
-			),
-			5 => array(
-			'var' => 'commission'
-			),
-			6 => array(
-			'var' => 'goodsCount'
-			),
-			7 => array(
-			'var' => 'commissionEnterTxn'
-			),
-			8 => array(
-			'var' => 'commissionEnterTime'
-			),
-			9 => array(
-			'var' => 'commissionSettledTime'
-			),
-			11 => array(
-			'var' => 'refundOrderDetails'
-			),
-			12 => array(
-			'var' => 'userId'
-			),
-			13 => array(
-			'var' => 'orderTime'
-			),
-			14 => array(
-			'var' => 'originCommEnterTime'
-			),
-			15 => array(
-			'var' => 'originCommEnterTxn'
-			),
-			16 => array(
-			'var' => 'settled'
-			),
+            );
 
-			);
+        }
 
-		}
+        if (is_array($vals)) {
 
-		if (is_array($vals)){
 
+            if (isset($vals['orderSn'])) {
 
-			if (isset($vals['orderSn'])){
+                $this->orderSn = $vals['orderSn'];
+            }
 
-				$this->orderSn = $vals['orderSn'];
-			}
 
+            if (isset($vals['applyTime'])) {
 
-			if (isset($vals['applyTime'])){
+                $this->applyTime = $vals['applyTime'];
+            }
 
-				$this->applyTime = $vals['applyTime'];
-			}
 
+            if (isset($vals['refundType'])) {
 
-			if (isset($vals['refundType'])){
+                $this->refundType = $vals['refundType'];
+            }
 
-				$this->refundType = $vals['refundType'];
-			}
 
+            if (isset($vals['commissionTotalCost'])) {
 
-			if (isset($vals['commissionTotalCost'])){
+                $this->commissionTotalCost = $vals['commissionTotalCost'];
+            }
 
-				$this->commissionTotalCost = $vals['commissionTotalCost'];
-			}
 
+            if (isset($vals['commission'])) {
 
-			if (isset($vals['commission'])){
+                $this->commission = $vals['commission'];
+            }
 
-				$this->commission = $vals['commission'];
-			}
 
+            if (isset($vals['goodsCount'])) {
 
-			if (isset($vals['goodsCount'])){
+                $this->goodsCount = $vals['goodsCount'];
+            }
 
-				$this->goodsCount = $vals['goodsCount'];
-			}
 
+            if (isset($vals['commissionEnterTxn'])) {
 
-			if (isset($vals['commissionEnterTxn'])){
+                $this->commissionEnterTxn = $vals['commissionEnterTxn'];
+            }
 
-				$this->commissionEnterTxn = $vals['commissionEnterTxn'];
-			}
 
+            if (isset($vals['commissionEnterTime'])) {
 
-			if (isset($vals['commissionEnterTime'])){
+                $this->commissionEnterTime = $vals['commissionEnterTime'];
+            }
 
-				$this->commissionEnterTime = $vals['commissionEnterTime'];
-			}
 
+            if (isset($vals['commissionSettledTime'])) {
 
-			if (isset($vals['commissionSettledTime'])){
+                $this->commissionSettledTime = $vals['commissionSettledTime'];
+            }
 
-				$this->commissionSettledTime = $vals['commissionSettledTime'];
-			}
 
+            if (isset($vals['refundOrderDetails'])) {
 
-			if (isset($vals['refundOrderDetails'])){
+                $this->refundOrderDetails = $vals['refundOrderDetails'];
+            }
 
-				$this->refundOrderDetails = $vals['refundOrderDetails'];
-			}
 
+            if (isset($vals['userId'])) {
 
-			if (isset($vals['userId'])){
+                $this->userId = $vals['userId'];
+            }
 
-				$this->userId = $vals['userId'];
-			}
 
+            if (isset($vals['orderTime'])) {
 
-			if (isset($vals['orderTime'])){
+                $this->orderTime = $vals['orderTime'];
+            }
 
-				$this->orderTime = $vals['orderTime'];
-			}
 
+            if (isset($vals['originCommEnterTime'])) {
 
-			if (isset($vals['originCommEnterTime'])){
+                $this->originCommEnterTime = $vals['originCommEnterTime'];
+            }
 
-				$this->originCommEnterTime = $vals['originCommEnterTime'];
-			}
 
+            if (isset($vals['originCommEnterTxn'])) {
 
-			if (isset($vals['originCommEnterTxn'])){
+                $this->originCommEnterTxn = $vals['originCommEnterTxn'];
+            }
 
-				$this->originCommEnterTxn = $vals['originCommEnterTxn'];
-			}
 
+            if (isset($vals['settled'])) {
 
-			if (isset($vals['settled'])){
+                $this->settled = $vals['settled'];
+            }
 
-				$this->settled = $vals['settled'];
-			}
 
+        }
 
-		}
+    }
 
-	}
 
+    public function getName()
+    {
 
-	public function getName(){
+        return 'RefundOrderInfo';
+    }
 
-		return 'RefundOrderInfo';
-	}
+    public function read($input)
+    {
 
-	public function read($input){
+        $input->readStructBegin();
+        while (true) {
 
-		$input->readStructBegin();
-		while(true){
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
 
+            if ("orderSn" == $schemeField) {
 
-			if ("orderSn" == $schemeField){
+                $needSkip = false;
+                $input->readString($this->orderSn);
 
-				$needSkip = false;
-				$input->readString($this->orderSn);
+            }
 
-			}
 
+            if ("applyTime" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->applyTime);
 
+            }
 
-			if ("applyTime" == $schemeField){
 
-				$needSkip = false;
-				$input->readI64($this->applyTime);
+            if ("refundType" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readI32($this->refundType);
 
+            }
 
 
+            if ("commissionTotalCost" == $schemeField) {
 
-			if ("refundType" == $schemeField){
+                $needSkip = false;
+                $input->readString($this->commissionTotalCost);
 
-				$needSkip = false;
-				$input->readI32($this->refundType);
+            }
 
-			}
 
+            if ("commission" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->commission);
 
+            }
 
-			if ("commissionTotalCost" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->commissionTotalCost);
+            if ("goodsCount" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readI32($this->goodsCount);
 
+            }
 
 
+            if ("commissionEnterTxn" == $schemeField) {
 
-			if ("commission" == $schemeField){
+                $needSkip = false;
+                $input->readString($this->commissionEnterTxn);
 
-				$needSkip = false;
-				$input->readString($this->commission);
+            }
 
-			}
 
+            if ("commissionEnterTime" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->commissionEnterTime);
 
+            }
 
-			if ("goodsCount" == $schemeField){
 
-				$needSkip = false;
-				$input->readI32($this->goodsCount);
+            if ("commissionSettledTime" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readI64($this->commissionSettledTime);
 
+            }
 
 
+            if ("refundOrderDetails" == $schemeField) {
 
-			if ("commissionEnterTxn" == $schemeField){
+                $needSkip = false;
 
-				$needSkip = false;
-				$input->readString($this->commissionEnterTxn);
+                $this->refundOrderDetails = array();
+                $_size0 = 0;
+                $input->readListBegin();
+                while (true) {
 
-			}
+                    try {
 
+                        $elem0 = null;
 
+                        $elem0 = new \YearDley\EasyTBK\Vip\Request\RefundOrderDetail();
+                        $elem0->read($input);
 
+                        $this->refundOrderDetails[$_size0++] = $elem0;
+                    } catch (\Exception $e) {
 
-			if ("commissionEnterTime" == $schemeField){
+                        break;
+                    }
+                }
 
-				$needSkip = false;
-				$input->readI64($this->commissionEnterTime);
+                $input->readListEnd();
 
-			}
+            }
 
 
+            if ("userId" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->userId);
 
-			if ("commissionSettledTime" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readI64($this->commissionSettledTime);
 
-			}
+            if ("orderTime" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->orderTime);
 
+            }
 
 
-			if ("refundOrderDetails" == $schemeField){
+            if ("originCommEnterTime" == $schemeField) {
 
-				$needSkip = false;
+                $needSkip = false;
+                $input->readI64($this->originCommEnterTime);
 
-				$this->refundOrderDetails = array();
-				$_size0 = 0;
-				$input->readListBegin();
-				while(true){
+            }
 
-					try{
 
-						$elem0 = null;
+            if ("originCommEnterTxn" == $schemeField) {
 
-						$elem0 = new \NiuGengYun\EasyTBK\Vip\Request\RefundOrderDetail();
-						$elem0->read($input);
+                $needSkip = false;
+                $input->readString($this->originCommEnterTxn);
 
-						$this->refundOrderDetails[$_size0++] = $elem0;
-					}
-					catch(\Exception $e){
+            }
 
-						break;
-					}
-				}
 
-				$input->readListEnd();
+            if ("settled" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readI32($this->settled);
 
+            }
 
 
+            if ($needSkip) {
 
-			if ("userId" == $schemeField){
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-				$needSkip = false;
-				$input->readI64($this->userId);
+            $input->readFieldEnd();
+        }
 
-			}
+        $input->readStructEnd();
 
 
+    }
 
+    public function write($output)
+    {
 
-			if ("orderTime" == $schemeField){
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-				$needSkip = false;
-				$input->readI64($this->orderTime);
+        if ($this->orderSn !== null) {
 
-			}
+            $xfer += $output->writeFieldBegin('orderSn');
+            $xfer += $output->writeString($this->orderSn);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
+        if ($this->applyTime !== null) {
 
-			if ("originCommEnterTime" == $schemeField){
+            $xfer += $output->writeFieldBegin('applyTime');
+            $xfer += $output->writeI64($this->applyTime);
 
-				$needSkip = false;
-				$input->readI64($this->originCommEnterTime);
+            $xfer += $output->writeFieldEnd();
+        }
 
-			}
 
+        if ($this->refundType !== null) {
 
+            $xfer += $output->writeFieldBegin('refundType');
+            $xfer += $output->writeI32($this->refundType);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-			if ("originCommEnterTxn" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->originCommEnterTxn);
+        if ($this->commissionTotalCost !== null) {
 
-			}
+            $xfer += $output->writeFieldBegin('commissionTotalCost');
+            $xfer += $output->writeString($this->commissionTotalCost);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
+        if ($this->commission !== null) {
 
-			if ("settled" == $schemeField){
+            $xfer += $output->writeFieldBegin('commission');
+            $xfer += $output->writeString($this->commission);
 
-				$needSkip = false;
-				$input->readI32($this->settled);
+            $xfer += $output->writeFieldEnd();
+        }
 
-			}
 
+        if ($this->goodsCount !== null) {
 
+            $xfer += $output->writeFieldBegin('goodsCount');
+            $xfer += $output->writeI32($this->goodsCount);
 
-			if($needSkip){
+            $xfer += $output->writeFieldEnd();
+        }
 
-                \NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
-			}
 
-			$input->readFieldEnd();
-		}
+        if ($this->commissionEnterTxn !== null) {
 
-		$input->readStructEnd();
+            $xfer += $output->writeFieldBegin('commissionEnterTxn');
+            $xfer += $output->writeString($this->commissionEnterTxn);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-	}
+        if ($this->commissionEnterTime !== null) {
 
-	public function write($output){
+            $xfer += $output->writeFieldBegin('commissionEnterTime');
+            $xfer += $output->writeI64($this->commissionEnterTime);
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->orderSn !== null) {
 
-			$xfer += $output->writeFieldBegin('orderSn');
-			$xfer += $output->writeString($this->orderSn);
+        if ($this->commissionSettledTime !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('commissionSettledTime');
+            $xfer += $output->writeI64($this->commissionSettledTime);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->applyTime !== null) {
 
-			$xfer += $output->writeFieldBegin('applyTime');
-			$xfer += $output->writeI64($this->applyTime);
+        if ($this->refundOrderDetails !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('refundOrderDetails');
 
+            if (!is_array($this->refundOrderDetails)) {
 
-		if($this->refundType !== null) {
+                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+            }
 
-			$xfer += $output->writeFieldBegin('refundType');
-			$xfer += $output->writeI32($this->refundType);
+            $output->writeListBegin();
+            foreach ($this->refundOrderDetails as $iter0) {
 
-			$xfer += $output->writeFieldEnd();
-		}
 
+                if (!is_object($iter0)) {
 
-		if($this->commissionTotalCost !== null) {
+                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                }
 
-			$xfer += $output->writeFieldBegin('commissionTotalCost');
-			$xfer += $output->writeString($this->commissionTotalCost);
+                $xfer += $iter0->write($output);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
+            $output->writeListEnd();
 
-		if($this->commission !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commission');
-			$xfer += $output->writeString($this->commission);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->userId !== null) {
 
+            $xfer += $output->writeFieldBegin('userId');
+            $xfer += $output->writeI64($this->userId);
 
-		if($this->goodsCount !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('goodsCount');
-			$xfer += $output->writeI32($this->goodsCount);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->orderTime !== null) {
 
+            $xfer += $output->writeFieldBegin('orderTime');
+            $xfer += $output->writeI64($this->orderTime);
 
-		if($this->commissionEnterTxn !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commissionEnterTxn');
-			$xfer += $output->writeString($this->commissionEnterTxn);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->originCommEnterTime !== null) {
 
+            $xfer += $output->writeFieldBegin('originCommEnterTime');
+            $xfer += $output->writeI64($this->originCommEnterTime);
 
-		if($this->commissionEnterTime !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commissionEnterTime');
-			$xfer += $output->writeI64($this->commissionEnterTime);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->originCommEnterTxn !== null) {
 
+            $xfer += $output->writeFieldBegin('originCommEnterTxn');
+            $xfer += $output->writeString($this->originCommEnterTxn);
 
-		if($this->commissionSettledTime !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commissionSettledTime');
-			$xfer += $output->writeI64($this->commissionSettledTime);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->settled !== null) {
 
+            $xfer += $output->writeFieldBegin('settled');
+            $xfer += $output->writeI32($this->settled);
 
-		if($this->refundOrderDetails !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('refundOrderDetails');
 
-			if (!is_array($this->refundOrderDetails)){
-
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
-			}
-
-			$output->writeListBegin();
-			foreach ($this->refundOrderDetails as $iter0){
-
-
-				if (!is_object($iter0)) {
-
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
-				}
-
-				$xfer += $iter0->write($output);
-
-			}
-
-			$output->writeListEnd();
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->userId !== null) {
-
-			$xfer += $output->writeFieldBegin('userId');
-			$xfer += $output->writeI64($this->userId);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->orderTime !== null) {
-
-			$xfer += $output->writeFieldBegin('orderTime');
-			$xfer += $output->writeI64($this->orderTime);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->originCommEnterTime !== null) {
-
-			$xfer += $output->writeFieldBegin('originCommEnterTime');
-			$xfer += $output->writeI64($this->originCommEnterTime);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->originCommEnterTxn !== null) {
-
-			$xfer += $output->writeFieldBegin('originCommEnterTxn');
-			$xfer += $output->writeString($this->originCommEnterTxn);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->settled !== null) {
-
-			$xfer += $output->writeFieldBegin('settled');
-			$xfer += $output->writeI32($this->settled);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

@@ -1,7 +1,8 @@
 <?php
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
+
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkOauthGoodsPidGenerateRequest implements RequestInterface
@@ -38,8 +39,8 @@ class DdkOauthGoodsPidGenerateRequest implements RequestInterface
     public function getParams()
     {
         $params = [
-            'type'      => $this->type,
-            'p_id_name_list'      => $this->name,
+            'type' => $this->type,
+            'p_id_name_list' => $this->name,
             'number' => $this->number,
         ];
         return array_filter($params);

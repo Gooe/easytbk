@@ -8,223 +8,219 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class RefundOrderResponse {
+class RefundOrderResponse
+{
 
-	static $_TSPEC;
-	public $refundOrderInfoList = null;
-	public $total = null;
-	public $page = null;
-	public $pageSize = null;
+    static $_TSPEC;
+    public $refundOrderInfoList = null;
+    public $total = null;
+    public $page = null;
+    public $pageSize = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'refundOrderInfoList'
-			),
-			2 => array(
-			'var' => 'total'
-			),
-			3 => array(
-			'var' => 'page'
-			),
-			4 => array(
-			'var' => 'pageSize'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'refundOrderInfoList'
+                ),
+                2 => array(
+                    'var' => 'total'
+                ),
+                3 => array(
+                    'var' => 'page'
+                ),
+                4 => array(
+                    'var' => 'pageSize'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['refundOrderInfoList'])){
+            if (isset($vals['refundOrderInfoList'])) {
 
-				$this->refundOrderInfoList = $vals['refundOrderInfoList'];
-			}
+                $this->refundOrderInfoList = $vals['refundOrderInfoList'];
+            }
 
 
-			if (isset($vals['total'])){
+            if (isset($vals['total'])) {
 
-				$this->total = $vals['total'];
-			}
+                $this->total = $vals['total'];
+            }
 
 
-			if (isset($vals['page'])){
+            if (isset($vals['page'])) {
 
-				$this->page = $vals['page'];
-			}
+                $this->page = $vals['page'];
+            }
 
 
-			if (isset($vals['pageSize'])){
+            if (isset($vals['pageSize'])) {
 
-				$this->pageSize = $vals['pageSize'];
-			}
+                $this->pageSize = $vals['pageSize'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'RefundOrderResponse';
-	}
+        return 'RefundOrderResponse';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("refundOrderInfoList" == $schemeField){
+            if ("refundOrderInfoList" == $schemeField) {
 
-				$needSkip = false;
+                $needSkip = false;
 
-				$this->refundOrderInfoList = array();
-				$_size0 = 0;
-				$input->readListBegin();
-				while(true){
+                $this->refundOrderInfoList = array();
+                $_size0 = 0;
+                $input->readListBegin();
+                while (true) {
 
-					try{
+                    try {
 
-						$elem0 = null;
+                        $elem0 = null;
 
-						$elem0 = new \NiuGengYun\EasyTBK\Vip\Request\RefundOrderInfo();
-						$elem0->read($input);
+                        $elem0 = new \YearDley\EasyTBK\Vip\Request\RefundOrderInfo();
+                        $elem0->read($input);
 
-						$this->refundOrderInfoList[$_size0++] = $elem0;
-					}
-					catch(\Exception $e){
+                        $this->refundOrderInfoList[$_size0++] = $elem0;
+                    } catch (\Exception $e) {
 
-						break;
-					}
-				}
+                        break;
+                    }
+                }
 
-				$input->readListEnd();
+                $input->readListEnd();
 
-			}
+            }
 
 
+            if ("total" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI32($this->total);
 
-			if ("total" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readI32($this->total);
 
-			}
+            if ("page" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI32($this->page);
 
+            }
 
 
-			if ("page" == $schemeField){
+            if ("pageSize" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->page);
+                $needSkip = false;
+                $input->readI32($this->pageSize);
 
-			}
+            }
 
 
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			if ("pageSize" == $schemeField){
+            $input->readFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readI32($this->pageSize);
+        $input->readStructEnd();
 
-			}
 
+    }
 
+    public function write($output)
+    {
 
-			if($needSkip){
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+        if ($this->refundOrderInfoList !== null) {
 
-			$input->readFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('refundOrderInfoList');
 
-		$input->readStructEnd();
+            if (!is_array($this->refundOrderInfoList)) {
 
+                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+            }
 
+            $output->writeListBegin();
+            foreach ($this->refundOrderInfoList as $iter0) {
 
-	}
 
-	public function write($output){
+                if (!is_object($iter0)) {
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                }
 
-		if($this->refundOrderInfoList !== null) {
+                $xfer += $iter0->write($output);
 
-			$xfer += $output->writeFieldBegin('refundOrderInfoList');
+            }
 
-			if (!is_array($this->refundOrderInfoList)){
+            $output->writeListEnd();
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
-			}
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$output->writeListBegin();
-			foreach ($this->refundOrderInfoList as $iter0){
 
+        if ($this->total !== null) {
 
-				if (!is_object($iter0)) {
+            $xfer += $output->writeFieldBegin('total');
+            $xfer += $output->writeI32($this->total);
 
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
-				}
+            $xfer += $output->writeFieldEnd();
+        }
 
-				$xfer += $iter0->write($output);
 
-			}
+        if ($this->page !== null) {
 
-			$output->writeListEnd();
+            $xfer += $output->writeFieldBegin('page');
+            $xfer += $output->writeI32($this->page);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->total !== null) {
+        if ($this->pageSize !== null) {
 
-			$xfer += $output->writeFieldBegin('total');
-			$xfer += $output->writeI32($this->total);
+            $xfer += $output->writeFieldBegin('pageSize');
+            $xfer += $output->writeI32($this->pageSize);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->page !== null) {
-
-			$xfer += $output->writeFieldBegin('page');
-			$xfer += $output->writeI32($this->page);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->pageSize !== null) {
-
-			$xfer += $output->writeFieldBegin('pageSize');
-			$xfer += $output->writeI32($this->pageSize);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

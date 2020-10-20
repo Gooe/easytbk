@@ -8,125 +8,126 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class SortField {
+class SortField
+{
 
-	static $_TSPEC;
-	public $fieldName = null;
-	public $fieldDesc = null;
+    static $_TSPEC;
+    public $fieldName = null;
+    public $fieldDesc = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'fieldName'
-			),
-			2 => array(
-			'var' => 'fieldDesc'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'fieldName'
+                ),
+                2 => array(
+                    'var' => 'fieldDesc'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
-
-
-			if (isset($vals['fieldName'])){
-
-				$this->fieldName = $vals['fieldName'];
-			}
+        if (is_array($vals)) {
 
 
-			if (isset($vals['fieldDesc'])){
+            if (isset($vals['fieldName'])) {
 
-				$this->fieldDesc = $vals['fieldDesc'];
-			}
-
-
-		}
-
-	}
+                $this->fieldName = $vals['fieldName'];
+            }
 
 
-	public function getName(){
+            if (isset($vals['fieldDesc'])) {
 
-		return 'SortField';
-	}
-
-	public function read($input){
-
-		$input->readStructBegin();
-		while(true){
-
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+                $this->fieldDesc = $vals['fieldDesc'];
+            }
 
 
-			if ("fieldName" == $schemeField){
+        }
 
-				$needSkip = false;
-				$input->readString($this->fieldName);
-
-			}
+    }
 
 
+    public function getName()
+    {
+
+        return 'SortField';
+    }
+
+    public function read($input)
+    {
+
+        $input->readStructBegin();
+        while (true) {
+
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("fieldDesc" == $schemeField){
+            if ("fieldName" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->fieldDesc);
+                $needSkip = false;
+                $input->readString($this->fieldName);
 
-			}
-
-
-
-			if($needSkip){
-
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
-
-			$input->readFieldEnd();
-		}
-
-		$input->readStructEnd();
+            }
 
 
+            if ("fieldDesc" == $schemeField) {
 
-	}
+                $needSkip = false;
+                $input->readString($this->fieldDesc);
 
-	public function write($output){
-
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
-
-		if($this->fieldName !== null) {
-
-			$xfer += $output->writeFieldBegin('fieldName');
-			$xfer += $output->writeString($this->fieldName);
-
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
 
-		if($this->fieldDesc !== null) {
+            if ($needSkip) {
 
-			$xfer += $output->writeFieldBegin('fieldDesc');
-			$xfer += $output->writeString($this->fieldDesc);
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $input->readFieldEnd();
+        }
+
+        $input->readStructEnd();
 
 
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+    }
+
+    public function write($output)
+    {
+
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
+
+        if ($this->fieldName !== null) {
+
+            $xfer += $output->writeFieldBegin('fieldName');
+            $xfer += $output->writeString($this->fieldName);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        if ($this->fieldDesc !== null) {
+
+            $xfer += $output->writeFieldBegin('fieldDesc');
+            $xfer += $output->writeString($this->fieldDesc);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

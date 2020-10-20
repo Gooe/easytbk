@@ -1,8 +1,8 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkTopGoodsListQueryRequest implements RequestInterface
@@ -36,8 +36,6 @@ class DdkTopGoodsListQueryRequest implements RequestInterface
      * @var
      */
     private $sortType;
-
-
 
 
     public function setSortType($sortType)

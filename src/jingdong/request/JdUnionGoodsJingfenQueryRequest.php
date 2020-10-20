@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionGoodsJingfenQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionGoodsJingfenQueryRequest implements RequestInterface
 {
@@ -60,7 +60,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     /**
      * @param mixed $sort
      */
-    public function setSort($sort): void
+    public function setSort($sort)
     {
         $this->sort = $sort;
     }
@@ -76,7 +76,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     /**
      * @param mixed $pageSize
      */
-    public function setPageSize($pageSize): void
+    public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
     }
@@ -92,7 +92,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     /**
      * @param mixed $eliteId
      */
-    public function setEliteId($eliteId): void
+    public function setEliteId($eliteId)
     {
         $this->eliteId = $eliteId;
     }
@@ -108,7 +108,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     /**
      * @param mixed $sortName
      */
-    public function setSortName($sortName): void
+    public function setSortName($sortName)
     {
         $this->sortName = $sortName;
     }
@@ -124,7 +124,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     /**
      * @param mixed $pageIndex
      */
-    public function setPageIndex($pageIndex): void
+    public function setPageIndex($pageIndex)
     {
         $this->pageIndex = $pageIndex;
     }
@@ -136,7 +136,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     {
         return $this->method;
     }
-    
+
     /**
      * @return mixed
      */
@@ -150,8 +150,8 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
             'pageIndex' => $this->pageIndex
         ];
 
-        return json_encode ([
-            'goodsReq' => array_filter ($params, function ($val) {
+        return json_encode([
+            'goodsReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

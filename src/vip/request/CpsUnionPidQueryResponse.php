@@ -8,165 +8,168 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class CpsUnionPidQueryResponse {
+use YearDley\EasyTBK\Vip\Osp\Exception\OspException;
+use YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
 
-	static $_TSPEC;
-	public $pidInfoList = null;
-	public $total = null;
+class CpsUnionPidQueryResponse
+{
 
-	public function __construct($vals=null){
+    static $_TSPEC;
+    public $pidInfoList = null;
+    public $total = null;
 
-		if (!isset(self::$_TSPEC)){
+    public function __construct($vals = null)
+    {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'pidInfoList'
-			),
-			2 => array(
-			'var' => 'total'
-			),
+        if (!isset(self::$_TSPEC)) {
 
-			);
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'pidInfoList'
+                ),
+                2 => array(
+                    'var' => 'total'
+                ),
 
-		}
+            );
 
-		if (is_array($vals)){
+        }
 
+        if (is_array($vals)) {
 
-			if (isset($vals['pidInfoList'])){
 
-				$this->pidInfoList = $vals['pidInfoList'];
-			}
+            if (isset($vals['pidInfoList'])) {
 
+                $this->pidInfoList = $vals['pidInfoList'];
+            }
 
-			if (isset($vals['total'])){
 
-				$this->total = $vals['total'];
-			}
+            if (isset($vals['total'])) {
 
+                $this->total = $vals['total'];
+            }
 
-		}
 
-	}
+        }
 
+    }
 
-	public function getName(){
 
-		return 'CpsUnionPidQueryResponse';
-	}
+    public function getName()
+    {
 
-	public function read($input){
+        return 'CpsUnionPidQueryResponse';
+    }
 
-		$input->readStructBegin();
-		while(true){
+    public function read($input)
+    {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+        $input->readStructBegin();
+        while (true) {
 
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
-			if ("pidInfoList" == $schemeField){
 
-				$needSkip = false;
+            if ("pidInfoList" == $schemeField) {
 
-				$this->pidInfoList = array();
-				$_size0 = 0;
-				$input->readListBegin();
-				while(true){
+                $needSkip = false;
 
-					try{
+                $this->pidInfoList = array();
+                $_size0 = 0;
+                $input->readListBegin();
+                while (true) {
 
-						$elem0 = null;
+                    try {
 
-						$elem0 = new \NiuGengYun\EasyTBK\Vip\Request\PidInfo();
-						$elem0->read($input);
+                        $elem0 = null;
 
-						$this->pidInfoList[$_size0++] = $elem0;
-					}
-					catch(\Exception $e){
+                        $elem0 = new \YearDley\EasyTBK\Vip\Request\PidInfo();
+                        $elem0->read($input);
 
-						break;
-					}
-				}
+                        $this->pidInfoList[$_size0++] = $elem0;
+                    } catch (\Exception $e) {
 
-				$input->readListEnd();
+                        break;
+                    }
+                }
 
-			}
+                $input->readListEnd();
 
+            }
 
 
+            if ("total" == $schemeField) {
 
-			if ("total" == $schemeField){
+                $needSkip = false;
+                $input->readI32($this->total);
 
-				$needSkip = false;
-				$input->readI32($this->total);
+            }
 
-			}
 
+            if ($needSkip) {
 
+                ProtocolUtil::skip($input);
+            }
 
-			if($needSkip){
+            $input->readFieldEnd();
+        }
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+        $input->readStructEnd();
 
-			$input->readFieldEnd();
-		}
 
-		$input->readStructEnd();
+    }
 
+    public function write($output)
+    {
 
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-	}
+        if ($this->pidInfoList !== null) {
 
-	public function write($output){
+            $xfer += $output->writeFieldBegin('pidInfoList');
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            if (!is_array($this->pidInfoList)) {
 
-		if($this->pidInfoList !== null) {
+                throw new OspException('Bad type in structure.', OspException::INVALID_DATA);
+            }
 
-			$xfer += $output->writeFieldBegin('pidInfoList');
+            $output->writeListBegin();
+            foreach ($this->pidInfoList as $iter0) {
 
-			if (!is_array($this->pidInfoList)){
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
-			}
+                if (!is_object($iter0)) {
 
-			$output->writeListBegin();
-			foreach ($this->pidInfoList as $iter0){
+                    throw new OspException('Bad type in structure.', OspException::INVALID_DATA);
+                }
 
+                $xfer += $iter0->write($output);
 
-				if (!is_object($iter0)) {
+            }
 
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
-				}
+            $output->writeListEnd();
 
-				$xfer += $iter0->write($output);
+            $xfer += $output->writeFieldEnd();
+        }
 
-			}
 
-			$output->writeListEnd();
+        if ($this->total !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('total');
+            $xfer += $output->writeI32($this->total);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->total !== null) {
 
-			$xfer += $output->writeFieldBegin('total');
-			$xfer += $output->writeI32($this->total);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

@@ -8,378 +8,361 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class GoodsInfoRequest {
+class GoodsInfoRequest
+{
 
-	static $_TSPEC;
-	public $channelType = null;
-	public $page = null;
-	public $pageSize = null;
-	public $requestId = null;
-	public $queryReputation = null;
-	public $queryStoreServiceCapability = null;
-	public $sourceType = null;
-	public $jxCode = null;
-	public $fieldName = null;
-	public $order = null;
-	public $queryStock = null;
+    static $_TSPEC;
+    public $channelType = null;
+    public $page = null;
+    public $pageSize = null;
+    public $requestId = null;
+    public $queryReputation = null;
+    public $queryStoreServiceCapability = null;
+    public $sourceType = null;
+    public $jxCode = null;
+    public $fieldName = null;
+    public $order = null;
+    public $queryStock = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'channelType'
-			),
-			2 => array(
-			'var' => 'page'
-			),
-			3 => array(
-			'var' => 'pageSize'
-			),
-			4 => array(
-			'var' => 'requestId'
-			),
-			5 => array(
-			'var' => 'queryReputation'
-			),
-			6 => array(
-			'var' => 'queryStoreServiceCapability'
-			),
-			7 => array(
-			'var' => 'sourceType'
-			),
-			8 => array(
-			'var' => 'jxCode'
-			),
-			9 => array(
-			'var' => 'fieldName'
-			),
-			10 => array(
-			'var' => 'order'
-			),
-			11 => array(
-			'var' => 'queryStock'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'channelType'
+                ),
+                2 => array(
+                    'var' => 'page'
+                ),
+                3 => array(
+                    'var' => 'pageSize'
+                ),
+                4 => array(
+                    'var' => 'requestId'
+                ),
+                5 => array(
+                    'var' => 'queryReputation'
+                ),
+                6 => array(
+                    'var' => 'queryStoreServiceCapability'
+                ),
+                7 => array(
+                    'var' => 'sourceType'
+                ),
+                8 => array(
+                    'var' => 'jxCode'
+                ),
+                9 => array(
+                    'var' => 'fieldName'
+                ),
+                10 => array(
+                    'var' => 'order'
+                ),
+                11 => array(
+                    'var' => 'queryStock'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['channelType'])){
+            if (isset($vals['channelType'])) {
 
-				$this->channelType = $vals['channelType'];
-			}
+                $this->channelType = $vals['channelType'];
+            }
 
 
-			if (isset($vals['page'])){
+            if (isset($vals['page'])) {
 
-				$this->page = $vals['page'];
-			}
+                $this->page = $vals['page'];
+            }
 
 
-			if (isset($vals['pageSize'])){
+            if (isset($vals['pageSize'])) {
 
-				$this->pageSize = $vals['pageSize'];
-			}
+                $this->pageSize = $vals['pageSize'];
+            }
 
 
-			if (isset($vals['requestId'])){
+            if (isset($vals['requestId'])) {
 
-				$this->requestId = $vals['requestId'];
-			}
+                $this->requestId = $vals['requestId'];
+            }
 
 
-			if (isset($vals['queryReputation'])){
+            if (isset($vals['queryReputation'])) {
 
-				$this->queryReputation = $vals['queryReputation'];
-			}
+                $this->queryReputation = $vals['queryReputation'];
+            }
 
 
-			if (isset($vals['queryStoreServiceCapability'])){
+            if (isset($vals['queryStoreServiceCapability'])) {
 
-				$this->queryStoreServiceCapability = $vals['queryStoreServiceCapability'];
-			}
+                $this->queryStoreServiceCapability = $vals['queryStoreServiceCapability'];
+            }
 
 
-			if (isset($vals['sourceType'])){
+            if (isset($vals['sourceType'])) {
 
-				$this->sourceType = $vals['sourceType'];
-			}
+                $this->sourceType = $vals['sourceType'];
+            }
 
 
-			if (isset($vals['jxCode'])){
+            if (isset($vals['jxCode'])) {
 
-				$this->jxCode = $vals['jxCode'];
-			}
+                $this->jxCode = $vals['jxCode'];
+            }
 
 
-			if (isset($vals['fieldName'])){
+            if (isset($vals['fieldName'])) {
 
-				$this->fieldName = $vals['fieldName'];
-			}
+                $this->fieldName = $vals['fieldName'];
+            }
 
 
-			if (isset($vals['order'])){
+            if (isset($vals['order'])) {
 
-				$this->order = $vals['order'];
-			}
+                $this->order = $vals['order'];
+            }
 
 
-			if (isset($vals['queryStock'])){
+            if (isset($vals['queryStock'])) {
 
-				$this->queryStock = $vals['queryStock'];
-			}
+                $this->queryStock = $vals['queryStock'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'GoodsInfoRequest';
-	}
+        return 'GoodsInfoRequest';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("channelType" == $schemeField){
+            if ("channelType" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->channelType);
+                $needSkip = false;
+                $input->readI32($this->channelType);
 
-			}
+            }
 
 
+            if ("page" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI32($this->page);
 
-			if ("page" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readI32($this->page);
 
-			}
+            if ("pageSize" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI32($this->pageSize);
 
+            }
 
 
-			if ("pageSize" == $schemeField){
+            if ("requestId" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->pageSize);
+                $needSkip = false;
+                $input->readString($this->requestId);
 
-			}
+            }
 
 
+            if ("queryReputation" == $schemeField) {
 
+                $needSkip = false;
+                $input->readBool($this->queryReputation);
 
-			if ("requestId" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->requestId);
 
-			}
+            if ("queryStoreServiceCapability" == $schemeField) {
 
+                $needSkip = false;
+                $input->readBool($this->queryStoreServiceCapability);
 
+            }
 
 
-			if ("queryReputation" == $schemeField){
+            if ("sourceType" == $schemeField) {
 
-				$needSkip = false;
-				$input->readBool($this->queryReputation);
+                $needSkip = false;
+                $input->readI32($this->sourceType);
 
-			}
+            }
 
 
+            if ("jxCode" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->jxCode);
 
-			if ("queryStoreServiceCapability" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readBool($this->queryStoreServiceCapability);
 
-			}
+            if ("fieldName" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->fieldName);
 
+            }
 
 
-			if ("sourceType" == $schemeField){
+            if ("order" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->sourceType);
+                $needSkip = false;
+                $input->readI32($this->order);
 
-			}
+            }
 
 
+            if ("queryStock" == $schemeField) {
 
+                $needSkip = false;
+                $input->readBool($this->queryStock);
 
-			if ("jxCode" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->jxCode);
 
-			}
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
+            $input->readFieldEnd();
+        }
 
+        $input->readStructEnd();
 
-			if ("fieldName" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->fieldName);
+    }
 
-			}
+    public function write($output)
+    {
 
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
+        if ($this->channelType !== null) {
 
+            $xfer += $output->writeFieldBegin('channelType');
+            $xfer += $output->writeI32($this->channelType);
 
-			if ("order" == $schemeField){
+            $xfer += $output->writeFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readI32($this->order);
 
-			}
+        $xfer += $output->writeFieldBegin('page');
+        $xfer += $output->writeI32($this->page);
 
+        $xfer += $output->writeFieldEnd();
 
+        if ($this->pageSize !== null) {
 
+            $xfer += $output->writeFieldBegin('pageSize');
+            $xfer += $output->writeI32($this->pageSize);
 
-			if ("queryStock" == $schemeField){
+            $xfer += $output->writeFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readBool($this->queryStock);
 
-			}
+        $xfer += $output->writeFieldBegin('requestId');
+        $xfer += $output->writeString($this->requestId);
 
+        $xfer += $output->writeFieldEnd();
 
+        if ($this->queryReputation !== null) {
 
-			if($needSkip){
+            $xfer += $output->writeFieldBegin('queryReputation');
+            $xfer += $output->writeBool($this->queryReputation);
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$input->readFieldEnd();
-		}
 
-		$input->readStructEnd();
+        if ($this->queryStoreServiceCapability !== null) {
 
+            $xfer += $output->writeFieldBegin('queryStoreServiceCapability');
+            $xfer += $output->writeBool($this->queryStoreServiceCapability);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-	}
 
-	public function write($output){
+        if ($this->sourceType !== null) {
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $xfer += $output->writeFieldBegin('sourceType');
+            $xfer += $output->writeI32($this->sourceType);
 
-		if($this->channelType !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('channelType');
-			$xfer += $output->writeI32($this->channelType);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->jxCode !== null) {
 
+            $xfer += $output->writeFieldBegin('jxCode');
+            $xfer += $output->writeString($this->jxCode);
 
-		$xfer += $output->writeFieldBegin('page');
-		$xfer += $output->writeI32($this->page);
+            $xfer += $output->writeFieldEnd();
+        }
 
-		$xfer += $output->writeFieldEnd();
 
-		if($this->pageSize !== null) {
+        if ($this->fieldName !== null) {
 
-			$xfer += $output->writeFieldBegin('pageSize');
-			$xfer += $output->writeI32($this->pageSize);
+            $xfer += $output->writeFieldBegin('fieldName');
+            $xfer += $output->writeString($this->fieldName);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		$xfer += $output->writeFieldBegin('requestId');
-		$xfer += $output->writeString($this->requestId);
+        if ($this->order !== null) {
 
-		$xfer += $output->writeFieldEnd();
+            $xfer += $output->writeFieldBegin('order');
+            $xfer += $output->writeI32($this->order);
 
-		if($this->queryReputation !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('queryReputation');
-			$xfer += $output->writeBool($this->queryReputation);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->queryStock !== null) {
 
+            $xfer += $output->writeFieldBegin('queryStock');
+            $xfer += $output->writeBool($this->queryStock);
 
-		if($this->queryStoreServiceCapability !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('queryStoreServiceCapability');
-			$xfer += $output->writeBool($this->queryStoreServiceCapability);
 
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->sourceType !== null) {
-
-			$xfer += $output->writeFieldBegin('sourceType');
-			$xfer += $output->writeI32($this->sourceType);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->jxCode !== null) {
-
-			$xfer += $output->writeFieldBegin('jxCode');
-			$xfer += $output->writeString($this->jxCode);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->fieldName !== null) {
-
-			$xfer += $output->writeFieldBegin('fieldName');
-			$xfer += $output->writeString($this->fieldName);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->order !== null) {
-
-			$xfer += $output->writeFieldBegin('order');
-			$xfer += $output->writeI32($this->order);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->queryStock !== null) {
-
-			$xfer += $output->writeFieldBegin('queryStock');
-			$xfer += $output->writeBool($this->queryStock);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

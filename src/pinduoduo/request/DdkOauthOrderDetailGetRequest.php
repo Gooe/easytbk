@@ -1,8 +1,8 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkOauthOrderDetailGetRequest implements RequestInterface
@@ -14,7 +14,6 @@ class DdkOauthOrderDetailGetRequest implements RequestInterface
     private $type = 'pdd.ddk.oauth.order.detail.get';
 
     private $orderSN;
-
 
 
     public function getOrderSN()

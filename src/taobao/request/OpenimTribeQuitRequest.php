@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.openim.tribe.quit request
  *
@@ -58,7 +59,7 @@ class OpenimTribeQuitRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->tribeId, "tribeId");
+        RequestCheckUtil::checkNotNull($this->tribeId, "tribeId");
     }
 
     public function putOtherTextParam($key, $value)

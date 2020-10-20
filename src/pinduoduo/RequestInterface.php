@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: niugengyun
+ * User: YearDley
  * Date: 2019/1/8
  * Time: 15:43
  */
 
-namespace NiuGengYun\EasyTBK\PinDuoDuo;
+namespace YearDley\EasyTBK\PinDuoDuo;
 
 
 interface RequestInterface

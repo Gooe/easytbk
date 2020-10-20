@@ -8,14 +8,16 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class UnionUrlServiceHelper extends _UnionUrlServiceClient{
+class UnionUrlServiceHelper extends _UnionUrlServiceClient
+{
 
-	public function __construct(){
+    public function __construct()
+    {
 
-		parent::__construct();
-	}
+        parent::__construct();
+    }
 
 }
 

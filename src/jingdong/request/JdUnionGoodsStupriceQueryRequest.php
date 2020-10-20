@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionGoodsStupriceQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionGoodsStupriceQueryRequest implements RequestInterface
 {
@@ -17,7 +17,6 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
      * @var string
      */
     private $method = 'jd.union.open.goods.stuprice.query';
-
 
 
     /**
@@ -108,7 +107,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $skuIds
      */
-    public function setSkuIds($skuIds): void
+    public function setSkuIds($skuIds)
     {
         $this->skuIds = $skuIds;
     }
@@ -124,7 +123,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $sort
      */
-    public function setSort($sort): void
+    public function setSort($sort)
     {
         $this->sort = $sort;
     }
@@ -140,7 +139,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $pageSize
      */
-    public function setPageSize($pageSize): void
+    public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
     }
@@ -156,7 +155,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $cid3
      */
-    public function setCid3($cid3): void
+    public function setCid3($cid3)
     {
         $this->cid3 = $cid3;
     }
@@ -172,7 +171,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $cid2
      */
-    public function setCid2($cid2): void
+    public function setCid2($cid2)
     {
         $this->cid2 = $cid2;
     }
@@ -188,7 +187,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $cid1
      */
-    public function setCid1($cid1): void
+    public function setCid1($cid1)
     {
         $this->cid1 = $cid1;
     }
@@ -204,7 +203,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $stuPriceTo
      */
-    public function setStuPriceTo($stuPriceTo): void
+    public function setStuPriceTo($stuPriceTo)
     {
         $this->stuPriceTo = $stuPriceTo;
     }
@@ -220,7 +219,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $sortName
      */
-    public function setSortName($sortName): void
+    public function setSortName($sortName)
     {
         $this->sortName = $sortName;
     }
@@ -236,7 +235,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $pageIndex
      */
-    public function setPageIndex($pageIndex): void
+    public function setPageIndex($pageIndex)
     {
         $this->pageIndex = $pageIndex;
     }
@@ -252,7 +251,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $commissionShareFrom
      */
-    public function setCommissionShareFrom($commissionShareFrom): void
+    public function setCommissionShareFrom($commissionShareFrom)
     {
         $this->commissionShareFrom = $commissionShareFrom;
     }
@@ -268,7 +267,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $stuPriceFrom
      */
-    public function setStuPriceFrom($stuPriceFrom): void
+    public function setStuPriceFrom($stuPriceFrom)
     {
         $this->stuPriceFrom = $stuPriceFrom;
     }
@@ -284,7 +283,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $commissionShareTo
      */
-    public function setCommissionShareTo($commissionShareTo): void
+    public function setCommissionShareTo($commissionShareTo)
     {
         $this->commissionShareTo = $commissionShareTo;
     }
@@ -300,7 +299,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
     /**
      * @param mixed $owner
      */
-    public function setOwner($owner): void
+    public function setOwner($owner)
     {
         $this->owner = $owner;
     }
@@ -336,7 +335,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
         ];
 
         return json_encode([
-            'goodsReq' => array_filter ($params, function ($val) {
+            'goodsReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

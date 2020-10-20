@@ -8,211 +8,207 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class PidQueryRequest {
+class PidQueryRequest
+{
 
-	static $_TSPEC;
-	public $pidList = null;
-	public $requestId = null;
-	public $page = null;
-	public $pageSize = null;
+    static $_TSPEC;
+    public $pidList = null;
+    public $requestId = null;
+    public $page = null;
+    public $pageSize = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'pidList'
-			),
-			2 => array(
-			'var' => 'requestId'
-			),
-			3 => array(
-			'var' => 'page'
-			),
-			4 => array(
-			'var' => 'pageSize'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'pidList'
+                ),
+                2 => array(
+                    'var' => 'requestId'
+                ),
+                3 => array(
+                    'var' => 'page'
+                ),
+                4 => array(
+                    'var' => 'pageSize'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['pidList'])){
+            if (isset($vals['pidList'])) {
 
-				$this->pidList = $vals['pidList'];
-			}
+                $this->pidList = $vals['pidList'];
+            }
 
 
-			if (isset($vals['requestId'])){
+            if (isset($vals['requestId'])) {
 
-				$this->requestId = $vals['requestId'];
-			}
+                $this->requestId = $vals['requestId'];
+            }
 
 
-			if (isset($vals['page'])){
+            if (isset($vals['page'])) {
 
-				$this->page = $vals['page'];
-			}
+                $this->page = $vals['page'];
+            }
 
 
-			if (isset($vals['pageSize'])){
+            if (isset($vals['pageSize'])) {
 
-				$this->pageSize = $vals['pageSize'];
-			}
+                $this->pageSize = $vals['pageSize'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'PidQueryRequest';
-	}
+        return 'PidQueryRequest';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("pidList" == $schemeField){
+            if ("pidList" == $schemeField) {
 
-				$needSkip = false;
+                $needSkip = false;
 
-				$this->pidList = array();
-				$_size1 = 0;
-				$input->readListBegin();
-				while(true){
+                $this->pidList = array();
+                $_size1 = 0;
+                $input->readListBegin();
+                while (true) {
 
-					try{
+                    try {
 
-						$elem1 = null;
-						$input->readString($elem1);
+                        $elem1 = null;
+                        $input->readString($elem1);
 
-						$this->pidList[$_size1++] = $elem1;
-					}
-					catch(\Exception $e){
+                        $this->pidList[$_size1++] = $elem1;
+                    } catch (\Exception $e) {
 
-						break;
-					}
-				}
+                        break;
+                    }
+                }
 
-				$input->readListEnd();
+                $input->readListEnd();
 
-			}
+            }
 
 
+            if ("requestId" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->requestId);
 
-			if ("requestId" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->requestId);
 
-			}
+            if ("page" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI32($this->page);
 
+            }
 
 
-			if ("page" == $schemeField){
+            if ("pageSize" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->page);
+                $needSkip = false;
+                $input->readI32($this->pageSize);
 
-			}
+            }
 
 
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			if ("pageSize" == $schemeField){
+            $input->readFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readI32($this->pageSize);
+        $input->readStructEnd();
 
-			}
 
+    }
 
+    public function write($output)
+    {
 
-			if($needSkip){
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+        if ($this->pidList !== null) {
 
-			$input->readFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('pidList');
 
-		$input->readStructEnd();
+            if (!is_array($this->pidList)) {
 
+                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+            }
 
+            $output->writeListBegin();
+            foreach ($this->pidList as $iter0) {
 
-	}
+                $xfer += $output->writeString($iter0);
 
-	public function write($output){
+            }
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $output->writeListEnd();
 
-		if($this->pidList !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('pidList');
 
-			if (!is_array($this->pidList)){
+        $xfer += $output->writeFieldBegin('requestId');
+        $xfer += $output->writeString($this->requestId);
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
-			}
+        $xfer += $output->writeFieldEnd();
 
-			$output->writeListBegin();
-			foreach ($this->pidList as $iter0){
+        if ($this->page !== null) {
 
-				$xfer += $output->writeString($iter0);
+            $xfer += $output->writeFieldBegin('page');
+            $xfer += $output->writeI32($this->page);
 
-			}
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$output->writeListEnd();
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->pageSize !== null) {
 
+            $xfer += $output->writeFieldBegin('pageSize');
+            $xfer += $output->writeI32($this->pageSize);
 
-		$xfer += $output->writeFieldBegin('requestId');
-		$xfer += $output->writeString($this->requestId);
+            $xfer += $output->writeFieldEnd();
+        }
 
-		$xfer += $output->writeFieldEnd();
 
-		if($this->page !== null) {
-
-			$xfer += $output->writeFieldBegin('page');
-			$xfer += $output->writeI32($this->page);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->pageSize !== null) {
-
-			$xfer += $output->writeFieldBegin('pageSize');
-			$xfer += $output->writeI32($this->pageSize);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

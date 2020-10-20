@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.topats.result.get request
  *
@@ -42,7 +43,7 @@ class TopatsResultGetRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->taskId, "taskId");
+        RequestCheckUtil::checkNotNull($this->taskId, "taskId");
     }
 
     public function putOtherTextParam($key, $value)

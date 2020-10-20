@@ -1,32 +1,38 @@
 {
-    "name": "niugengyun/easytbk",
+    "name": "yeardley/easytbk",
     "type": "library",
     "description": "淘客六合一SDK，支持淘宝联盟、京东联盟、多多进宝、唯品会、苏宁、蘑菇街. 微信:bugfixed",
-    "keywords": ["淘宝客","淘宝客SDK"],
-    "homepage": "https://github.com/niugengyun/easytbk",
+    "keywords": [
+        "淘宝客",
+        "淘宝客SDK"
+    ],
+    "homepage": "https://github.com/yeardley/easytbk",
     "license": "MIT",
     "authors": [
         {
-            "name": "niugengyun",
-            "email": "515343908@qq.com"
+            "name": "yeardley",
+            "email": "510865496@qq.com"
         }
     ],
     "require": {
         "php": ">=7.0.0",
-        "illuminate/support": "~5.8|~6.0|~7.0",
-        "graham-campbell/manager": "^2.0|^3.0|^4.0",
-        "laravel/helpers": "^1.2"
+        "ext-simplexml": "*",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-mbstring": "*"
     },
     "autoload": {
         "psr-4": {
-            "NiuGengYun\\EasyTBK\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "NiuGengYun\\EasyTBK\\ServiceProvider"
-            ]
-        }
+            "YearDley\\EasyTBK\\": "src/",
+            "YearDley\\EasyTBK\\PinDuoDuo\\": "src/pinduoduo",
+            "YearDley\\EasyTBK\\TaoBao\\": "src/taobao",
+            "YearDley\\EasyTBK\\JingDong\\": "src/jingdong",
+            "YearDley\\EasyTBK\\SuNing\\": "src/suning",
+            "YearDley\\EasyTBK\\Vip\\": "src/vip"
+        },
+        "files": [
+            "src/helper.php"
+        ]
     }
 }

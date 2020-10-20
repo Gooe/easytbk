@@ -1,8 +1,8 @@
 <?php
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
 
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkOrderListIncrementGetRequest implements RequestInterface
@@ -20,7 +20,6 @@ class DdkOrderListIncrementGetRequest implements RequestInterface
     private $pageSize;
 
     private $page;
-
 
 
     public function setStartUpdateTime($startUpdateTime)
@@ -66,11 +65,11 @@ class DdkOrderListIncrementGetRequest implements RequestInterface
     public function getParams()
     {
         $params = [
-            'type'              => $this->type,
+            'type' => $this->type,
             'start_update_time' => $this->startUpdateTime,
-            'end_update_time'   => $this->endUpdateTime,
-            'page_size'         => $this->pageSize,
-            'page'              => $this->page
+            'end_update_time' => $this->endUpdateTime,
+            'page_size' => $this->pageSize,
+            'page' => $this->page
         ];
         return array_filter($params);
     }

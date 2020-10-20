@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.tpwd.create request
  *
@@ -106,8 +107,8 @@ class TbkTpwdCreateRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->text, "text");
-        RequestCheckUtil::checkNotNull ($this->url, "url");
+        RequestCheckUtil::checkNotNull($this->text, "text");
+        RequestCheckUtil::checkNotNull($this->url, "url");
     }
 
     public function putOtherTextParam($key, $value)

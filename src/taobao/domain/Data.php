@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace YearDley\EasyTBK\TaoBao\Domain;
 
 /**
  * data
@@ -8,10 +8,11 @@ namespace NiuGengYun\EasyTBK\TaoBao\Domain;
  */
 class Data
 {
-	
-	/** 
-	 * 邀请码
-	 **/
-	public $inviter_code;	
+
+    /**
+     * 邀请码
+     **/
+    public $inviter_code;
 }
+
 ?>

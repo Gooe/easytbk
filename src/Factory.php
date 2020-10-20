@@ -1,22 +1,22 @@
 <?php
 
-namespace NiuGengYun\EasyTBK;
+namespace YearDley\EasyTBK;
 
-use NiuGengYun\EasyTBK\TaoBao\Application as TaoBao;
-use NiuGengYun\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
-use NiuGengYun\EasyTBK\JingDong\Application as JingDong;
-use NiuGengYun\EasyTBK\Vip\Application as Vip;
-use NiuGengYun\EasyTBK\SuNing\Application as SuNing;
-use NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContext;
+use YearDley\EasyTBK\TaoBao\Application as TaoBao;
+use YearDley\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
+use YearDley\EasyTBK\JingDong\Application as JingDong;
+use YearDley\EasyTBK\Vip\Application as Vip;
+use YearDley\EasyTBK\SuNing\Application as SuNing;
+use YearDley\EasyTBK\Vip\Osp\Context\InvocationContext;
 
 /**
  * Class Factory.
  *
- * @method TaoBao taobao()
- * @method PinDuoDuo pinduoduo()
- * @method JingDong jingdong()
- * @method Vip vip()
- * @method SuNing suning()
+ * @method TaoBao taobao($config = [])
+ * @method PinDuoDuo pinduoduo($config = [])
+ * @method JingDong jingdong($config = [])
+ * @method Vip vip($config = [])
+ * @method SuNing suning($config = [])
  */
 class Factory
 {
@@ -77,6 +77,9 @@ class Factory
         }
 
         if (count($config) == 0) {
+            if (!function_exists('config')) {
+                throw new \InvalidArgumentException('The config requires api keys.');
+            };
             $config = config("{$this->getConfigName ()}.{$name}", []);
         }
         $config = $this->getConfig($name, $config);
@@ -134,8 +137,6 @@ class Factory
      * Get the topclient client.
      *
      * @param string[] $auth
-     *
-     * @return CloudsearchClient
      */
     protected function getClient(string $name, array $config)
     {

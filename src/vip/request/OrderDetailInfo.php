@@ -8,484 +8,462 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
-
-class OrderDetailInfo {
+namespace YearDley\EasyTBK\Vip\Request;
+
+class OrderDetailInfo
+{
+
+    static $_TSPEC;
+    public $goodsId = null;
+    public $goodsName = null;
+    public $goodsThumb = null;
+    public $goodsCount = null;
+    public $commissionTotalCost = null;
+    public $commissionRate = null;
+    public $commission = null;
+    public $commCode = null;
+    public $commName = null;
+    public $orderSource = null;
+    public $afterSaleInfo = null;
+    public $sizeId = null;
+    public $status = null;
 
-	static $_TSPEC;
-	public $goodsId = null;
-	public $goodsName = null;
-	public $goodsThumb = null;
-	public $goodsCount = null;
-	public $commissionTotalCost = null;
-	public $commissionRate = null;
-	public $commission = null;
-	public $commCode = null;
-	public $commName = null;
-	public $orderSource = null;
-	public $afterSaleInfo = null;
-	public $sizeId = null;
-	public $status = null;
+    public function __construct($vals = null)
+    {
 
-	public function __construct($vals=null){
+        if (!isset(self::$_TSPEC)) {
 
-		if (!isset(self::$_TSPEC)){
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'goodsId'
+                ),
+                2 => array(
+                    'var' => 'goodsName'
+                ),
+                3 => array(
+                    'var' => 'goodsThumb'
+                ),
+                4 => array(
+                    'var' => 'goodsCount'
+                ),
+                5 => array(
+                    'var' => 'commissionTotalCost'
+                ),
+                6 => array(
+                    'var' => 'commissionRate'
+                ),
+                7 => array(
+                    'var' => 'commission'
+                ),
+                8 => array(
+                    'var' => 'commCode'
+                ),
+                9 => array(
+                    'var' => 'commName'
+                ),
+                10 => array(
+                    'var' => 'orderSource'
+                ),
+                11 => array(
+                    'var' => 'afterSaleInfo'
+                ),
+                12 => array(
+                    'var' => 'sizeId'
+                ),
+                13 => array(
+                    'var' => 'status'
+                ),
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'goodsId'
-			),
-			2 => array(
-			'var' => 'goodsName'
-			),
-			3 => array(
-			'var' => 'goodsThumb'
-			),
-			4 => array(
-			'var' => 'goodsCount'
-			),
-			5 => array(
-			'var' => 'commissionTotalCost'
-			),
-			6 => array(
-			'var' => 'commissionRate'
-			),
-			7 => array(
-			'var' => 'commission'
-			),
-			8 => array(
-			'var' => 'commCode'
-			),
-			9 => array(
-			'var' => 'commName'
-			),
-			10 => array(
-			'var' => 'orderSource'
-			),
-			11 => array(
-			'var' => 'afterSaleInfo'
-			),
-			12 => array(
-			'var' => 'sizeId'
-			),
-			13 => array(
-			'var' => 'status'
-			),
+            );
 
-			);
+        }
 
-		}
+        if (is_array($vals)) {
 
-		if (is_array($vals)){
 
+            if (isset($vals['goodsId'])) {
 
-			if (isset($vals['goodsId'])){
+                $this->goodsId = $vals['goodsId'];
+            }
 
-				$this->goodsId = $vals['goodsId'];
-			}
 
+            if (isset($vals['goodsName'])) {
 
-			if (isset($vals['goodsName'])){
+                $this->goodsName = $vals['goodsName'];
+            }
 
-				$this->goodsName = $vals['goodsName'];
-			}
 
+            if (isset($vals['goodsThumb'])) {
 
-			if (isset($vals['goodsThumb'])){
+                $this->goodsThumb = $vals['goodsThumb'];
+            }
 
-				$this->goodsThumb = $vals['goodsThumb'];
-			}
 
+            if (isset($vals['goodsCount'])) {
 
-			if (isset($vals['goodsCount'])){
+                $this->goodsCount = $vals['goodsCount'];
+            }
 
-				$this->goodsCount = $vals['goodsCount'];
-			}
 
+            if (isset($vals['commissionTotalCost'])) {
 
-			if (isset($vals['commissionTotalCost'])){
+                $this->commissionTotalCost = $vals['commissionTotalCost'];
+            }
 
-				$this->commissionTotalCost = $vals['commissionTotalCost'];
-			}
 
+            if (isset($vals['commissionRate'])) {
 
-			if (isset($vals['commissionRate'])){
+                $this->commissionRate = $vals['commissionRate'];
+            }
 
-				$this->commissionRate = $vals['commissionRate'];
-			}
 
+            if (isset($vals['commission'])) {
 
-			if (isset($vals['commission'])){
+                $this->commission = $vals['commission'];
+            }
 
-				$this->commission = $vals['commission'];
-			}
 
+            if (isset($vals['commCode'])) {
 
-			if (isset($vals['commCode'])){
+                $this->commCode = $vals['commCode'];
+            }
 
-				$this->commCode = $vals['commCode'];
-			}
 
+            if (isset($vals['commName'])) {
 
-			if (isset($vals['commName'])){
+                $this->commName = $vals['commName'];
+            }
 
-				$this->commName = $vals['commName'];
-			}
 
+            if (isset($vals['orderSource'])) {
 
-			if (isset($vals['orderSource'])){
+                $this->orderSource = $vals['orderSource'];
+            }
 
-				$this->orderSource = $vals['orderSource'];
-			}
 
+            if (isset($vals['afterSaleInfo'])) {
 
-			if (isset($vals['afterSaleInfo'])){
+                $this->afterSaleInfo = $vals['afterSaleInfo'];
+            }
 
-				$this->afterSaleInfo = $vals['afterSaleInfo'];
-			}
 
+            if (isset($vals['sizeId'])) {
 
-			if (isset($vals['sizeId'])){
+                $this->sizeId = $vals['sizeId'];
+            }
 
-				$this->sizeId = $vals['sizeId'];
-			}
 
+            if (isset($vals['status'])) {
 
-			if (isset($vals['status'])){
+                $this->status = $vals['status'];
+            }
 
-				$this->status = $vals['status'];
-			}
 
+        }
 
-		}
+    }
 
-	}
 
+    public function getName()
+    {
 
-	public function getName(){
+        return 'OrderDetailInfo';
+    }
 
-		return 'OrderDetailInfo';
-	}
+    public function read($input)
+    {
 
-	public function read($input){
+        $input->readStructBegin();
+        while (true) {
 
-		$input->readStructBegin();
-		while(true){
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
 
+            if ("goodsId" == $schemeField) {
 
-			if ("goodsId" == $schemeField){
+                $needSkip = false;
+                $input->readString($this->goodsId);
 
-				$needSkip = false;
-				$input->readString($this->goodsId);
+            }
 
-			}
 
+            if ("goodsName" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->goodsName);
 
+            }
 
-			if ("goodsName" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->goodsName);
+            if ("goodsThumb" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readString($this->goodsThumb);
 
+            }
 
 
+            if ("goodsCount" == $schemeField) {
 
-			if ("goodsThumb" == $schemeField){
+                $needSkip = false;
+                $input->readI32($this->goodsCount);
 
-				$needSkip = false;
-				$input->readString($this->goodsThumb);
+            }
 
-			}
 
+            if ("commissionTotalCost" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->commissionTotalCost);
 
+            }
 
-			if ("goodsCount" == $schemeField){
 
-				$needSkip = false;
-				$input->readI32($this->goodsCount);
+            if ("commissionRate" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readString($this->commissionRate);
 
+            }
 
 
+            if ("commission" == $schemeField) {
 
-			if ("commissionTotalCost" == $schemeField){
+                $needSkip = false;
+                $input->readString($this->commission);
 
-				$needSkip = false;
-				$input->readString($this->commissionTotalCost);
+            }
 
-			}
 
+            if ("commCode" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->commCode);
 
+            }
 
-			if ("commissionRate" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->commissionRate);
+            if ("commName" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readString($this->commName);
 
+            }
 
 
+            if ("orderSource" == $schemeField) {
 
-			if ("commission" == $schemeField){
+                $needSkip = false;
+                $input->readString($this->orderSource);
 
-				$needSkip = false;
-				$input->readString($this->commission);
+            }
 
-			}
 
+            if ("afterSaleInfo" == $schemeField) {
 
+                $needSkip = false;
 
+                $this->afterSaleInfo = array();
+                $_size0 = 0;
+                $input->readListBegin();
+                while (true) {
 
-			if ("commCode" == $schemeField){
+                    try {
 
-				$needSkip = false;
-				$input->readString($this->commCode);
+                        $elem0 = null;
 
-			}
+                        $elem0 = new \YearDley\EasyTBK\Vip\Request\AfterSaleDetailInfo();
+                        $elem0->read($input);
 
+                        $this->afterSaleInfo[$_size0++] = $elem0;
+                    } catch (\Exception $e) {
 
+                        break;
+                    }
+                }
 
+                $input->readListEnd();
 
-			if ("commName" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->commName);
 
-			}
+            if ("sizeId" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->sizeId);
 
+            }
 
 
-			if ("orderSource" == $schemeField){
+            if ("status" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->orderSource);
+                $needSkip = false;
+                $input->readI16($this->status);
 
-			}
+            }
 
 
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			if ("afterSaleInfo" == $schemeField){
+            $input->readFieldEnd();
+        }
 
-				$needSkip = false;
+        $input->readStructEnd();
 
-				$this->afterSaleInfo = array();
-				$_size0 = 0;
-				$input->readListBegin();
-				while(true){
 
-					try{
+    }
 
-						$elem0 = null;
+    public function write($output)
+    {
 
-						$elem0 = new \NiuGengYun\EasyTBK\Vip\Request\AfterSaleDetailInfo();
-						$elem0->read($input);
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-						$this->afterSaleInfo[$_size0++] = $elem0;
-					}
-					catch(\Exception $e){
+        if ($this->goodsId !== null) {
 
-						break;
-					}
-				}
+            $xfer += $output->writeFieldBegin('goodsId');
+            $xfer += $output->writeString($this->goodsId);
 
-				$input->readListEnd();
+            $xfer += $output->writeFieldEnd();
+        }
 
-			}
 
+        if ($this->goodsName !== null) {
 
+            $xfer += $output->writeFieldBegin('goodsName');
+            $xfer += $output->writeString($this->goodsName);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-			if ("sizeId" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->sizeId);
+        if ($this->goodsThumb !== null) {
 
-			}
+            $xfer += $output->writeFieldBegin('goodsThumb');
+            $xfer += $output->writeString($this->goodsThumb);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
+        if ($this->goodsCount !== null) {
 
-			if ("status" == $schemeField){
+            $xfer += $output->writeFieldBegin('goodsCount');
+            $xfer += $output->writeI32($this->goodsCount);
 
-				$needSkip = false;
-				$input->readI16($this->status);
+            $xfer += $output->writeFieldEnd();
+        }
 
-			}
 
+        if ($this->commissionTotalCost !== null) {
 
+            $xfer += $output->writeFieldBegin('commissionTotalCost');
+            $xfer += $output->writeString($this->commissionTotalCost);
 
-			if($needSkip){
+            $xfer += $output->writeFieldEnd();
+        }
 
-                \NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
-			}
 
-			$input->readFieldEnd();
-		}
+        if ($this->commissionRate !== null) {
 
-		$input->readStructEnd();
+            $xfer += $output->writeFieldBegin('commissionRate');
+            $xfer += $output->writeString($this->commissionRate);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-	}
+        if ($this->commission !== null) {
 
-	public function write($output){
+            $xfer += $output->writeFieldBegin('commission');
+            $xfer += $output->writeString($this->commission);
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->goodsId !== null) {
 
-			$xfer += $output->writeFieldBegin('goodsId');
-			$xfer += $output->writeString($this->goodsId);
+        if ($this->commCode !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('commCode');
+            $xfer += $output->writeString($this->commCode);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->goodsName !== null) {
 
-			$xfer += $output->writeFieldBegin('goodsName');
-			$xfer += $output->writeString($this->goodsName);
+        if ($this->commName !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('commName');
+            $xfer += $output->writeString($this->commName);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->goodsThumb !== null) {
 
-			$xfer += $output->writeFieldBegin('goodsThumb');
-			$xfer += $output->writeString($this->goodsThumb);
+        if ($this->orderSource !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('orderSource');
+            $xfer += $output->writeString($this->orderSource);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->goodsCount !== null) {
 
-			$xfer += $output->writeFieldBegin('goodsCount');
-			$xfer += $output->writeI32($this->goodsCount);
+        if ($this->afterSaleInfo !== null) {
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('afterSaleInfo');
 
+            if (!is_array($this->afterSaleInfo)) {
 
-		if($this->commissionTotalCost !== null) {
+                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+            }
 
-			$xfer += $output->writeFieldBegin('commissionTotalCost');
-			$xfer += $output->writeString($this->commissionTotalCost);
+            $output->writeListBegin();
+            foreach ($this->afterSaleInfo as $iter0) {
 
-			$xfer += $output->writeFieldEnd();
-		}
 
+                if (!is_object($iter0)) {
 
-		if($this->commissionRate !== null) {
+                    throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+                }
 
-			$xfer += $output->writeFieldBegin('commissionRate');
-			$xfer += $output->writeString($this->commissionRate);
+                $xfer += $iter0->write($output);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
+            $output->writeListEnd();
 
-		if($this->commission !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commission');
-			$xfer += $output->writeString($this->commission);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->sizeId !== null) {
 
+            $xfer += $output->writeFieldBegin('sizeId');
+            $xfer += $output->writeString($this->sizeId);
 
-		if($this->commCode !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commCode');
-			$xfer += $output->writeString($this->commCode);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->status !== null) {
 
+            $xfer += $output->writeFieldBegin('status');
+            $xfer += $output->writeI16($this->status);
 
-		if($this->commName !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('commName');
-			$xfer += $output->writeString($this->commName);
 
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->orderSource !== null) {
-
-			$xfer += $output->writeFieldBegin('orderSource');
-			$xfer += $output->writeString($this->orderSource);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->afterSaleInfo !== null) {
-
-			$xfer += $output->writeFieldBegin('afterSaleInfo');
-
-			if (!is_array($this->afterSaleInfo)){
-
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
-			}
-
-			$output->writeListBegin();
-			foreach ($this->afterSaleInfo as $iter0){
-
-
-				if (!is_object($iter0)) {
-
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
-				}
-
-				$xfer += $iter0->write($output);
-
-			}
-
-			$output->writeListEnd();
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->sizeId !== null) {
-
-			$xfer += $output->writeFieldBegin('sizeId');
-			$xfer += $output->writeString($this->sizeId);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->status !== null) {
-
-			$xfer += $output->writeFieldBegin('status');
-			$xfer += $output->writeI16($this->status);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

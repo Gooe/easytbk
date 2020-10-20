@@ -8,153 +8,153 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class PidGenRequest {
+class PidGenRequest
+{
 
-	static $_TSPEC;
-	public $pidNameList = null;
-	public $requestId = null;
+    static $_TSPEC;
+    public $pidNameList = null;
+    public $requestId = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'pidNameList'
-			),
-			2 => array(
-			'var' => 'requestId'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'pidNameList'
+                ),
+                2 => array(
+                    'var' => 'requestId'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
-
-
-			if (isset($vals['pidNameList'])){
-
-				$this->pidNameList = $vals['pidNameList'];
-			}
+        if (is_array($vals)) {
 
 
-			if (isset($vals['requestId'])){
+            if (isset($vals['pidNameList'])) {
 
-				$this->requestId = $vals['requestId'];
-			}
-
-
-		}
-
-	}
+                $this->pidNameList = $vals['pidNameList'];
+            }
 
 
-	public function getName(){
+            if (isset($vals['requestId'])) {
 
-		return 'PidGenRequest';
-	}
-
-	public function read($input){
-
-		$input->readStructBegin();
-		while(true){
-
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+                $this->requestId = $vals['requestId'];
+            }
 
 
-			if ("pidNameList" == $schemeField){
+        }
 
-				$needSkip = false;
-
-				$this->pidNameList = array();
-				$_size0 = 0;
-				$input->readListBegin();
-				while(true){
-
-					try{
-
-						$elem0 = null;
-						$input->readString($elem0);
-
-						$this->pidNameList[$_size0++] = $elem0;
-					}
-					catch(\Exception $e){
-
-						break;
-					}
-				}
-
-				$input->readListEnd();
-
-			}
+    }
 
 
+    public function getName()
+    {
+
+        return 'PidGenRequest';
+    }
+
+    public function read($input)
+    {
+
+        $input->readStructBegin();
+        while (true) {
+
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("requestId" == $schemeField){
+            if ("pidNameList" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->requestId);
+                $needSkip = false;
 
-			}
+                $this->pidNameList = array();
+                $_size0 = 0;
+                $input->readListBegin();
+                while (true) {
 
+                    try {
 
+                        $elem0 = null;
+                        $input->readString($elem0);
 
-			if($needSkip){
+                        $this->pidNameList[$_size0++] = $elem0;
+                    } catch (\Exception $e) {
 
-                \NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+                        break;
+                    }
+                }
 
-			$input->readFieldEnd();
-		}
+                $input->readListEnd();
 
-		$input->readStructEnd();
-
-
-
-	}
-
-	public function write($output){
-
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
-
-		if($this->pidNameList !== null) {
-
-			$xfer += $output->writeFieldBegin('pidNameList');
-
-			if (!is_array($this->pidNameList)){
-
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
-			}
-
-			$output->writeListBegin();
-			foreach ($this->pidNameList as $iter0){
-
-				$xfer += $output->writeString($iter0);
-
-			}
-
-			$output->writeListEnd();
-
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
 
-		$xfer += $output->writeFieldBegin('requestId');
-		$xfer += $output->writeString($this->requestId);
+            if ("requestId" == $schemeField) {
 
-		$xfer += $output->writeFieldEnd();
+                $needSkip = false;
+                $input->readString($this->requestId);
 
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+            }
+
+
+            if ($needSkip) {
+
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
+
+            $input->readFieldEnd();
+        }
+
+        $input->readStructEnd();
+
+
+    }
+
+    public function write($output)
+    {
+
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
+
+        if ($this->pidNameList !== null) {
+
+            $xfer += $output->writeFieldBegin('pidNameList');
+
+            if (!is_array($this->pidNameList)) {
+
+                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+            }
+
+            $output->writeListBegin();
+            foreach ($this->pidNameList as $iter0) {
+
+                $xfer += $output->writeString($iter0);
+
+            }
+
+            $output->writeListEnd();
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        $xfer += $output->writeFieldBegin('requestId');
+        $xfer += $output->writeString($this->requestId);
+
+        $xfer += $output->writeFieldEnd();
+
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

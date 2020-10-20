@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.item.get request
  *
@@ -12,6 +13,8 @@ use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
 class TbkItemConvertRequest
 {
     private $Fields;
+
+    protected $apiParas = [];
 
     public function setFields($Fields)
     {
@@ -104,7 +107,7 @@ class TbkItemConvertRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->Fields, "fields");
+        RequestCheckUtil::checkNotNull($this->Fields, "fields");
     }
 
     public function putOtherTextParam($key, $value)

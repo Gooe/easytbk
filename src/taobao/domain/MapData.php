@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace YearDley\EasyTBK\TaoBao\Domain;
 
 /**
  * data
@@ -8,10 +8,11 @@ namespace NiuGengYun\EasyTBK\TaoBao\Domain;
  */
 class MapData
 {
-	
-	/** 
-	 * password
-	 **/
-	public $model;	
+
+    /**
+     * password
+     **/
+    public $model;
 }
+
 ?>

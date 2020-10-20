@@ -8,154 +8,153 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class PidInfo {
+class PidInfo
+{
 
-	static $_TSPEC;
-	public $pid = null;
-	public $pidName = null;
-	public $createTime = null;
+    static $_TSPEC;
+    public $pid = null;
+    public $pidName = null;
+    public $createTime = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'pid'
-			),
-			2 => array(
-			'var' => 'pidName'
-			),
-			3 => array(
-			'var' => 'createTime'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'pid'
+                ),
+                2 => array(
+                    'var' => 'pidName'
+                ),
+                3 => array(
+                    'var' => 'createTime'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['pid'])){
+            if (isset($vals['pid'])) {
 
-				$this->pid = $vals['pid'];
-			}
+                $this->pid = $vals['pid'];
+            }
 
 
-			if (isset($vals['pidName'])){
+            if (isset($vals['pidName'])) {
 
-				$this->pidName = $vals['pidName'];
-			}
+                $this->pidName = $vals['pidName'];
+            }
 
 
-			if (isset($vals['createTime'])){
+            if (isset($vals['createTime'])) {
 
-				$this->createTime = $vals['createTime'];
-			}
+                $this->createTime = $vals['createTime'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'PidInfo';
-	}
+        return 'PidInfo';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("pid" == $schemeField){
+            if ("pid" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->pid);
+                $needSkip = false;
+                $input->readString($this->pid);
 
-			}
+            }
 
 
+            if ("pidName" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->pidName);
 
-			if ("pidName" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->pidName);
 
-			}
+            if ("createTime" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->createTime);
 
+            }
 
 
-			if ("createTime" == $schemeField){
+            if ($needSkip) {
 
-				$needSkip = false;
-				$input->readI64($this->createTime);
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			}
+            $input->readFieldEnd();
+        }
 
+        $input->readStructEnd();
 
 
-			if($needSkip){
+    }
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+    public function write($output)
+    {
 
-			$input->readFieldEnd();
-		}
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-		$input->readStructEnd();
+        if ($this->pid !== null) {
 
+            $xfer += $output->writeFieldBegin('pid');
+            $xfer += $output->writeString($this->pid);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-	}
 
-	public function write($output){
+        if ($this->pidName !== null) {
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $xfer += $output->writeFieldBegin('pidName');
+            $xfer += $output->writeString($this->pidName);
 
-		if($this->pid !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('pid');
-			$xfer += $output->writeString($this->pid);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->createTime !== null) {
 
+            $xfer += $output->writeFieldBegin('createTime');
+            $xfer += $output->writeI64($this->createTime);
 
-		if($this->pidName !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('pidName');
-			$xfer += $output->writeString($this->pidName);
 
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->createTime !== null) {
-
-			$xfer += $output->writeFieldBegin('createTime');
-			$xfer += $output->writeI64($this->createTime);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

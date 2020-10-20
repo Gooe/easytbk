@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionPositionCreateRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionPositionCreateRequest implements RequestInterface
 {
@@ -66,7 +66,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
     /**
      * @param mixed $spaceNameList
      */
-    public function setSpaceNameList($spaceNameList): void
+    public function setSpaceNameList($spaceNameList)
     {
         $this->spaceNameList = $spaceNameList;
     }
@@ -82,7 +82,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
     /**
      * @param mixed $unionType
      */
-    public function setUnionType($unionType): void
+    public function setUnionType($unionType)
     {
         $this->unionType = $unionType;
     }
@@ -98,7 +98,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
     /**
      * @param mixed $siteId
      */
-    public function setSiteId($siteId): void
+    public function setSiteId($siteId)
     {
         $this->siteId = $siteId;
     }
@@ -114,7 +114,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
     /**
      * @param mixed $unionId
      */
-    public function setUnionId($unionId): void
+    public function setUnionId($unionId)
     {
         $this->unionId = $unionId;
     }
@@ -130,7 +130,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
     /**
      * @param mixed $type
      */
-    public function setType($type): void
+    public function setType($type)
     {
         $this->type = $type;
     }
@@ -146,7 +146,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
     /**
      * @param mixed $key
      */
-    public function setKey($key): void
+    public function setKey($key)
     {
         $this->key = $key;
     }
@@ -170,13 +170,12 @@ class JdUnionPositionCreateRequest implements RequestInterface
             'unionType' => $this->unionType,
             'siteId' => $this->siteId,
             'unionId' => $this->unionId,
-            'unionId' => $this->unionId,
             'type' => $this->type,
             'key' => $this->key,
         ];
 
         return json_encode([
-            'positionReq' => array_filter ($params, function ($val) {
+            'positionReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

@@ -8,241 +8,235 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class AfterSaleDetailInfo {
+use YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
 
-	static $_TSPEC;
-	public $afterSaleChangedCommission = null;
-	public $afterSaleChangedGoodsCount = null;
-	public $afterSaleSn = null;
-	public $afterSaleStatus = null;
-	public $afterSaleType = null;
-	public $afterSaleFinishTime = null;
+class AfterSaleDetailInfo
+{
 
-	public function __construct($vals=null){
+    static $_TSPEC;
+    public $afterSaleChangedCommission = null;
+    public $afterSaleChangedGoodsCount = null;
+    public $afterSaleSn = null;
+    public $afterSaleStatus = null;
+    public $afterSaleType = null;
+    public $afterSaleFinishTime = null;
 
-		if (!isset(self::$_TSPEC)){
+    public function __construct($vals = null)
+    {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'afterSaleChangedCommission'
-			),
-			2 => array(
-			'var' => 'afterSaleChangedGoodsCount'
-			),
-			3 => array(
-			'var' => 'afterSaleSn'
-			),
-			4 => array(
-			'var' => 'afterSaleStatus'
-			),
-			5 => array(
-			'var' => 'afterSaleType'
-			),
-			6 => array(
-			'var' => 'afterSaleFinishTime'
-			),
+        if (!isset(self::$_TSPEC)) {
 
-			);
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'afterSaleChangedCommission'
+                ),
+                2 => array(
+                    'var' => 'afterSaleChangedGoodsCount'
+                ),
+                3 => array(
+                    'var' => 'afterSaleSn'
+                ),
+                4 => array(
+                    'var' => 'afterSaleStatus'
+                ),
+                5 => array(
+                    'var' => 'afterSaleType'
+                ),
+                6 => array(
+                    'var' => 'afterSaleFinishTime'
+                ),
 
-		}
+            );
 
-		if (is_array($vals)){
+        }
 
+        if (is_array($vals)) {
 
-			if (isset($vals['afterSaleChangedCommission'])){
 
-				$this->afterSaleChangedCommission = $vals['afterSaleChangedCommission'];
-			}
+            if (isset($vals['afterSaleChangedCommission'])) {
 
+                $this->afterSaleChangedCommission = $vals['afterSaleChangedCommission'];
+            }
 
-			if (isset($vals['afterSaleChangedGoodsCount'])){
 
-				$this->afterSaleChangedGoodsCount = $vals['afterSaleChangedGoodsCount'];
-			}
+            if (isset($vals['afterSaleChangedGoodsCount'])) {
 
+                $this->afterSaleChangedGoodsCount = $vals['afterSaleChangedGoodsCount'];
+            }
 
-			if (isset($vals['afterSaleSn'])){
 
-				$this->afterSaleSn = $vals['afterSaleSn'];
-			}
+            if (isset($vals['afterSaleSn'])) {
 
+                $this->afterSaleSn = $vals['afterSaleSn'];
+            }
 
-			if (isset($vals['afterSaleStatus'])){
 
-				$this->afterSaleStatus = $vals['afterSaleStatus'];
-			}
+            if (isset($vals['afterSaleStatus'])) {
 
+                $this->afterSaleStatus = $vals['afterSaleStatus'];
+            }
 
-			if (isset($vals['afterSaleType'])){
 
-				$this->afterSaleType = $vals['afterSaleType'];
-			}
+            if (isset($vals['afterSaleType'])) {
 
+                $this->afterSaleType = $vals['afterSaleType'];
+            }
 
-			if (isset($vals['afterSaleFinishTime'])){
 
-				$this->afterSaleFinishTime = $vals['afterSaleFinishTime'];
-			}
+            if (isset($vals['afterSaleFinishTime'])) {
 
+                $this->afterSaleFinishTime = $vals['afterSaleFinishTime'];
+            }
 
-		}
 
-	}
+        }
 
+    }
 
-	public function getName(){
 
-		return 'AfterSaleDetailInfo';
-	}
+    public function getName()
+    {
 
-	public function read($input){
+        return 'AfterSaleDetailInfo';
+    }
 
-		$input->readStructBegin();
-		while(true){
+    public function read($input)
+    {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+        $input->readStructBegin();
+        while (true) {
 
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
-			if ("afterSaleChangedCommission" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->afterSaleChangedCommission);
+            if ("afterSaleChangedCommission" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readString($this->afterSaleChangedCommission);
 
+            }
 
 
+            if ("afterSaleChangedGoodsCount" == $schemeField) {
 
-			if ("afterSaleChangedGoodsCount" == $schemeField){
+                $needSkip = false;
+                $input->readI32($this->afterSaleChangedGoodsCount);
 
-				$needSkip = false;
-				$input->readI32($this->afterSaleChangedGoodsCount);
+            }
 
-			}
 
+            if ("afterSaleSn" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->afterSaleSn);
 
+            }
 
-			if ("afterSaleSn" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->afterSaleSn);
+            if ("afterSaleStatus" == $schemeField) {
 
-			}
+                $needSkip = false;
+                $input->readI32($this->afterSaleStatus);
 
+            }
 
 
+            if ("afterSaleType" == $schemeField) {
 
-			if ("afterSaleStatus" == $schemeField){
+                $needSkip = false;
+                $input->readI32($this->afterSaleType);
 
-				$needSkip = false;
-				$input->readI32($this->afterSaleStatus);
+            }
 
-			}
 
+            if ("afterSaleFinishTime" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->afterSaleFinishTime);
 
+            }
 
-			if ("afterSaleType" == $schemeField){
 
-				$needSkip = false;
-				$input->readI32($this->afterSaleType);
+            if ($needSkip) {
+                ProtocolUtil::skip($input);
+            }
 
-			}
+            $input->readFieldEnd();
+        }
 
+        $input->readStructEnd();
 
 
+    }
 
-			if ("afterSaleFinishTime" == $schemeField){
+    public function write($output)
+    {
 
-				$needSkip = false;
-				$input->readI64($this->afterSaleFinishTime);
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-			}
+        if ($this->afterSaleChangedCommission !== null) {
 
+            $xfer += $output->writeFieldBegin('afterSaleChangedCommission');
+            $xfer += $output->writeString($this->afterSaleChangedCommission);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-			if($needSkip){
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+        if ($this->afterSaleChangedGoodsCount !== null) {
 
-			$input->readFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('afterSaleChangedGoodsCount');
+            $xfer += $output->writeI32($this->afterSaleChangedGoodsCount);
 
-		$input->readStructEnd();
+            $xfer += $output->writeFieldEnd();
+        }
 
 
+        if ($this->afterSaleSn !== null) {
 
-	}
+            $xfer += $output->writeFieldBegin('afterSaleSn');
+            $xfer += $output->writeString($this->afterSaleSn);
 
-	public function write($output){
+            $xfer += $output->writeFieldEnd();
+        }
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
 
-		if($this->afterSaleChangedCommission !== null) {
+        if ($this->afterSaleStatus !== null) {
 
-			$xfer += $output->writeFieldBegin('afterSaleChangedCommission');
-			$xfer += $output->writeString($this->afterSaleChangedCommission);
+            $xfer += $output->writeFieldBegin('afterSaleStatus');
+            $xfer += $output->writeI32($this->afterSaleStatus);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->afterSaleChangedGoodsCount !== null) {
+        if ($this->afterSaleType !== null) {
 
-			$xfer += $output->writeFieldBegin('afterSaleChangedGoodsCount');
-			$xfer += $output->writeI32($this->afterSaleChangedGoodsCount);
+            $xfer += $output->writeFieldBegin('afterSaleType');
+            $xfer += $output->writeI32($this->afterSaleType);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->afterSaleSn !== null) {
+        if ($this->afterSaleFinishTime !== null) {
 
-			$xfer += $output->writeFieldBegin('afterSaleSn');
-			$xfer += $output->writeString($this->afterSaleSn);
+            $xfer += $output->writeFieldBegin('afterSaleFinishTime');
+            $xfer += $output->writeI64($this->afterSaleFinishTime);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->afterSaleStatus !== null) {
-
-			$xfer += $output->writeFieldBegin('afterSaleStatus');
-			$xfer += $output->writeI32($this->afterSaleStatus);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->afterSaleType !== null) {
-
-			$xfer += $output->writeFieldBegin('afterSaleType');
-			$xfer += $output->writeI32($this->afterSaleType);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->afterSaleFinishTime !== null) {
-
-			$xfer += $output->writeFieldBegin('afterSaleFinishTime');
-			$xfer += $output->writeI64($this->afterSaleFinishTime);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

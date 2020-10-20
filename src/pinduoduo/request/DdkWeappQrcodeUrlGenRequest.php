@@ -1,13 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: niugengyun
+ * User: YearDley
  * Date: 2018/11/19
  * Time: 下午3:03
  */
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
+
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkWeappQrcodeUrlGenRequest implements RequestInterface
@@ -42,7 +43,6 @@ class DdkWeappQrcodeUrlGenRequest implements RequestInterface
      * @var
      */
     private $zsduoId;
-
 
 
     public function setPid($pid)
@@ -88,11 +88,11 @@ class DdkWeappQrcodeUrlGenRequest implements RequestInterface
     public function getParams()
     {
         $params = [
-            'type'                   => $this->type,
-            'p_id'                   => $this->pid,
-            'goods_id_list'          => $this->goodsIdList,
-            'custom_parameters'      => $this->customParameters,
-            'zs_duo_id'              => $this->zsduoId,
+            'type' => $this->type,
+            'p_id' => $this->pid,
+            'goods_id_list' => $this->goodsIdList,
+            'custom_parameters' => $this->customParameters,
+            'zs_duo_id' => $this->zsduoId,
         ];
         return array_filter($params);
     }

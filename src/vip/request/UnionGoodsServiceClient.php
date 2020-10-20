@@ -8,68 +8,70 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class UnionGoodsServiceClient{
+class UnionGoodsServiceClient
+{
 
-	private static $isRegis;
-	private static $DEFAULT_PROXY_IP = "127.0.0.1";
-	private static $DEFAULT_PROXY_PORT = "2080";
+    private static $isRegis;
+    private static $DEFAULT_PROXY_IP = "127.0.0.1";
+    private static $DEFAULT_PROXY_PORT = "2080";
 
-	private static function regis(){
+    private static function regis()
+    {
 
-		$path =  \NiuGengYun\EasyTBK\Vip\Osp\Util\PathUtil::getRootPath ();
-		$nsLoader = new \NiuGengYun\EasyTBK\Vip\Osp\ClassLoader\ClassLoader ();
-		$nsLoader->registerNamespace ( 'Thrift', $path );
-		$nsLoader->registerNamespace ( 'Osp', $path );
-		$nsLoader->registerNamespace ( 'com', $path );
-		$nsLoader->register ();
-	}
-
-
-	public static function getService(){
-
-		if (! UnionGoodsServiceClient::$isRegis){
-
-			UnionGoodsServiceClient::regis ();
-			UnionGoodsServiceClient::$isRegis = true;
-		}
+        $path = \YearDley\EasyTBK\Vip\Osp\Util\PathUtil::getRootPath();
+        $nsLoader = new \YearDley\EasyTBK\Vip\Osp\ClassLoader\ClassLoader ();
+        $nsLoader->registerNamespace('Thrift', $path);
+        $nsLoader->registerNamespace('Osp', $path);
+        $nsLoader->registerNamespace('com', $path);
+        $nsLoader->register();
+    }
 
 
-		$ctx =  \NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContextFactory::getInstance ();
-		$ip = UnionGoodsServiceClient::$DEFAULT_PROXY_IP;
-		$port = UnionGoodsServiceClient::$DEFAULT_PROXY_PORT;
-		try{
+    public static function getService()
+    {
 
-			$envCfg = getenv ( "VIP_OSP_PROXY" );
-			$ipport = explode ( ":", $envCfg );
-			if (strlen ( $envCfg ) > 0 && count ( $ipport ) == 2){
+        if (!UnionGoodsServiceClient::$isRegis) {
 
-				$ip = $ipport [0];
-				$port = $ipport [1];
-			}
+            UnionGoodsServiceClient::regis();
+            UnionGoodsServiceClient::$isRegis = true;
+        }
 
-		}
-		catch(\Exception $e){
 
-			$ip = UnionGoodsServiceClient::$DEFAULT_PROXY_IP;
-			$port = UnionGoodsServiceClient::$DEFAULT_PROXY_PORT;
-		}
+        $ctx = \YearDley\EasyTBK\Vip\Osp\Context\InvocationContextFactory::getInstance();
+        $ip = UnionGoodsServiceClient::$DEFAULT_PROXY_IP;
+        $port = UnionGoodsServiceClient::$DEFAULT_PROXY_PORT;
+        try {
 
-		if ($ctx->getCalleeIP () == null){
+            $envCfg = getenv("VIP_OSP_PROXY");
+            $ipport = explode(":", $envCfg);
+            if (strlen($envCfg) > 0 && count($ipport) == 2) {
 
-			$ctx->setCalleeIP ( $ip );
-		}
+                $ip = $ipport [0];
+                $port = $ipport [1];
+            }
 
-		if ($ctx->getCalleePort () == null){
+        } catch (\Exception $e) {
 
-			$ctx->setCalleePort ( $port );
-		}
+            $ip = UnionGoodsServiceClient::$DEFAULT_PROXY_IP;
+            $port = UnionGoodsServiceClient::$DEFAULT_PROXY_PORT;
+        }
 
-		//$ctx->setProtocol ( \Osp\Protocol\OspProtocol::$Binary );
+        if ($ctx->getCalleeIP() == null) {
 
-		return new \NiuGengYun\EasyTBK\Vip\Request\UnionGoodsServiceHelper();
-	}
+            $ctx->setCalleeIP($ip);
+        }
+
+        if ($ctx->getCalleePort() == null) {
+
+            $ctx->setCalleePort($port);
+        }
+
+        //$ctx->setProtocol ( \Osp\Protocol\OspProtocol::$Binary );
+
+        return new \YearDley\EasyTBK\Vip\Request\UnionGoodsServiceHelper();
+    }
 
 }
 

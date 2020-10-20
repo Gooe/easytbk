@@ -19,10 +19,11 @@
  *
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\StringFunc;
+namespace YearDley\EasyTBK\Vip\Osp\StringFunc;
 
 
-class StringFuncFactory {
+class StringFuncFactory
+{
     private static $_instance;
 
     /**
@@ -31,25 +32,26 @@ class StringFuncFactory {
      *
      * @return TStringFunc
      */
-    public static function create() {
-        if(!self::$_instance) {
+    public static function create()
+    {
+        if (!self::$_instance) {
             self::_setInstance();
         }
 
         return self::$_instance;
     }
 
-    private static function _setInstance() {
+    private static function _setInstance()
+    {
         /**
          * Cannot use str* functions for byte counting because multibyte
          * characters will be read a single bytes.
          *
          * See: http://us.php.net/manual/en/mbstring.overload.php
          */
-        if(ini_get('mbstring.func_overload') & 2) {
+        if (ini_get('mbstring.func_overload') & 2) {
             self::$_instance = new Mbstring();
-        }
-        /**
+        } /**
          * mbstring is not installed or does not have function overloading
          * of the str* functions enabled so use PHP core str* functions for
          * byte counting.

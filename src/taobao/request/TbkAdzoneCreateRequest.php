@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.adzone.create request
  *
@@ -58,9 +59,9 @@ class TbkAdzoneCreateRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->adzoneName, "adzoneName");
-        RequestCheckUtil::checkMaxLength ($this->adzoneName, 64, "adzoneName");
-        RequestCheckUtil::checkNotNull ($this->siteId, "siteId");
+        RequestCheckUtil::checkNotNull($this->adzoneName, "adzoneName");
+        RequestCheckUtil::checkMaxLength($this->adzoneName, 64, "adzoneName");
+        RequestCheckUtil::checkNotNull($this->siteId, "siteId");
     }
 
     public function putOtherTextParam($key, $value)

@@ -1,12 +1,12 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 /**
  * Class JdUnionCouponQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionCouponQueryRequest implements RequestInterface
 {
@@ -34,7 +34,7 @@ class JdUnionCouponQueryRequest implements RequestInterface
     /**
      * @param mixed $couponUrls
      */
-    public function setCouponUrls(array $couponUrls): void
+    public function setCouponUrls(array $couponUrls)
     {
         $this->couponUrls = $couponUrls;
     }

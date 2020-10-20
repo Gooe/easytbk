@@ -8,125 +8,128 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class GoodsCommentsInfo {
+use YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil;
 
-	static $_TSPEC;
-	public $comments = null;
-	public $goodCommentsShare = null;
+class GoodsCommentsInfo
+{
 
-	public function __construct($vals=null){
+    static $_TSPEC;
+    public $comments = null;
+    public $goodCommentsShare = null;
 
-		if (!isset(self::$_TSPEC)){
+    public function __construct($vals = null)
+    {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'comments'
-			),
-			2 => array(
-			'var' => 'goodCommentsShare'
-			),
+        if (!isset(self::$_TSPEC)) {
 
-			);
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'comments'
+                ),
+                2 => array(
+                    'var' => 'goodCommentsShare'
+                ),
 
-		}
+            );
 
-		if (is_array($vals)){
+        }
 
-
-			if (isset($vals['comments'])){
-
-				$this->comments = $vals['comments'];
-			}
+        if (is_array($vals)) {
 
 
-			if (isset($vals['goodCommentsShare'])){
+            if (isset($vals['comments'])) {
 
-				$this->goodCommentsShare = $vals['goodCommentsShare'];
-			}
-
-
-		}
-
-	}
+                $this->comments = $vals['comments'];
+            }
 
 
-	public function getName(){
+            if (isset($vals['goodCommentsShare'])) {
 
-		return 'GoodsCommentsInfo';
-	}
-
-	public function read($input){
-
-		$input->readStructBegin();
-		while(true){
-
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+                $this->goodCommentsShare = $vals['goodCommentsShare'];
+            }
 
 
-			if ("comments" == $schemeField){
+        }
 
-				$needSkip = false;
-				$input->readI32($this->comments);
-
-			}
+    }
 
 
+    public function getName()
+    {
+
+        return 'GoodsCommentsInfo';
+    }
+
+    public function read($input)
+    {
+
+        $input->readStructBegin();
+        while (true) {
+
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("goodCommentsShare" == $schemeField){
+            if ("comments" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->goodCommentsShare);
+                $needSkip = false;
+                $input->readI32($this->comments);
 
-			}
-
-
-
-			if($needSkip){
-
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
-
-			$input->readFieldEnd();
-		}
-
-		$input->readStructEnd();
+            }
 
 
+            if ("goodCommentsShare" == $schemeField) {
 
-	}
+                $needSkip = false;
+                $input->readString($this->goodCommentsShare);
 
-	public function write($output){
-
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
-
-		if($this->comments !== null) {
-
-			$xfer += $output->writeFieldBegin('comments');
-			$xfer += $output->writeI32($this->comments);
-
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
 
-		if($this->goodCommentsShare !== null) {
+            if ($needSkip) {
 
-			$xfer += $output->writeFieldBegin('goodCommentsShare');
-			$xfer += $output->writeString($this->goodCommentsShare);
+                ProtocolUtil::skip($input);
+            }
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $input->readFieldEnd();
+        }
+
+        $input->readStructEnd();
 
 
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+    }
+
+    public function write($output)
+    {
+
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
+
+        if ($this->comments !== null) {
+
+            $xfer += $output->writeFieldBegin('comments');
+            $xfer += $output->writeI32($this->comments);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        if ($this->goodCommentsShare !== null) {
+
+            $xfer += $output->writeFieldBegin('goodCommentsShare');
+            $xfer += $output->writeString($this->goodCommentsShare);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

@@ -8,198 +8,195 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class VipLinkCheckVO {
+class VipLinkCheckVO
+{
 
-	static $_TSPEC;
-	public $linkType = null;
-	public $landUrl = null;
-	public $goodsId = null;
-	public $brandId = null;
+    static $_TSPEC;
+    public $linkType = null;
+    public $landUrl = null;
+    public $goodsId = null;
+    public $brandId = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'linkType'
-			),
-			2 => array(
-			'var' => 'landUrl'
-			),
-			3 => array(
-			'var' => 'goodsId'
-			),
-			4 => array(
-			'var' => 'brandId'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'linkType'
+                ),
+                2 => array(
+                    'var' => 'landUrl'
+                ),
+                3 => array(
+                    'var' => 'goodsId'
+                ),
+                4 => array(
+                    'var' => 'brandId'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['linkType'])){
+            if (isset($vals['linkType'])) {
 
-				$this->linkType = $vals['linkType'];
-			}
+                $this->linkType = $vals['linkType'];
+            }
 
 
-			if (isset($vals['landUrl'])){
+            if (isset($vals['landUrl'])) {
 
-				$this->landUrl = $vals['landUrl'];
-			}
+                $this->landUrl = $vals['landUrl'];
+            }
 
 
-			if (isset($vals['goodsId'])){
+            if (isset($vals['goodsId'])) {
 
-				$this->goodsId = $vals['goodsId'];
-			}
+                $this->goodsId = $vals['goodsId'];
+            }
 
 
-			if (isset($vals['brandId'])){
+            if (isset($vals['brandId'])) {
 
-				$this->brandId = $vals['brandId'];
-			}
+                $this->brandId = $vals['brandId'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'VipLinkCheckVO';
-	}
+        return 'VipLinkCheckVO';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("linkType" == $schemeField){
+            if ("linkType" == $schemeField) {
 
-				$needSkip = false;
+                $needSkip = false;
 
-				$names = \NiuGengYun\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names;
-				$name = null;
-				$input->readString($name);
-				foreach ($names as $k => $v){
+                $names = \YearDley\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names;
+                $name = null;
+                $input->readString($name);
+                foreach ($names as $k => $v) {
 
-					if($name == $v){
+                    if ($name == $v) {
 
-						$this->linkType = $k;
-						break;
-					}
+                        $this->linkType = $k;
+                        break;
+                    }
 
-				}
+                }
 
 
-			}
+            }
 
 
+            if ("landUrl" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->landUrl);
 
-			if ("landUrl" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->landUrl);
 
-			}
+            if ("goodsId" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->goodsId);
 
+            }
 
 
-			if ("goodsId" == $schemeField){
+            if ("brandId" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->goodsId);
+                $needSkip = false;
+                $input->readString($this->brandId);
 
-			}
+            }
 
 
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			if ("brandId" == $schemeField){
+            $input->readFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readString($this->brandId);
+        $input->readStructEnd();
 
-			}
 
+    }
 
+    public function write($output)
+    {
 
-			if($needSkip){
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+        if ($this->linkType !== null) {
 
-			$input->readFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('linkType');
 
-		$input->readStructEnd();
+            $em = new \YearDley\EasyTBK\Vip\Request\VipLinkTypeEnum;
+            $output->writeString(\YearDley\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names[$this->linkType]);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-	}
+        if ($this->landUrl !== null) {
 
-	public function write($output){
+            $xfer += $output->writeFieldBegin('landUrl');
+            $xfer += $output->writeString($this->landUrl);
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $xfer += $output->writeFieldEnd();
+        }
 
-		if($this->linkType !== null) {
 
-			$xfer += $output->writeFieldBegin('linkType');
+        if ($this->goodsId !== null) {
 
-			$em = new \NiuGengYun\EasyTBK\Vip\Request\VipLinkTypeEnum;
-			$output->writeString($em::$__names[$this->linkType]);
+            $xfer += $output->writeFieldBegin('goodsId');
+            $xfer += $output->writeString($this->goodsId);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->landUrl !== null) {
+        if ($this->brandId !== null) {
 
-			$xfer += $output->writeFieldBegin('landUrl');
-			$xfer += $output->writeString($this->landUrl);
+            $xfer += $output->writeFieldBegin('brandId');
+            $xfer += $output->writeString($this->brandId);
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->goodsId !== null) {
-
-			$xfer += $output->writeFieldBegin('goodsId');
-			$xfer += $output->writeString($this->goodsId);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->brandId !== null) {
-
-			$xfer += $output->writeFieldBegin('brandId');
-			$xfer += $output->writeString($this->brandId);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

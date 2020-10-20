@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace YearDley\EasyTBK\TaoBao\Domain;
 
 /**
  * model
@@ -8,10 +8,11 @@ namespace NiuGengYun\EasyTBK\TaoBao\Domain;
  */
 class ContentEffectPageDto
 {
-	
-	/** 
-	 * contentEffectList
-	 **/
-	public $content_effect_list;	
+
+    /**
+     * contentEffectList
+     **/
+    public $content_effect_list;
 }
+
 ?>

@@ -1,7 +1,8 @@
 <?php
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
+
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
 class DdkGoodsDetailRequest implements RequestInterface
@@ -42,7 +43,7 @@ class DdkGoodsDetailRequest implements RequestInterface
     public function getParams()
     {
         return [
-            'type'          => $this->type,
+            'type' => $this->type,
             'goods_id_list' => $this->goodsIdList
         ];
     }

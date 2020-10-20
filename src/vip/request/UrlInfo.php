@@ -8,386 +8,369 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class UrlInfo {
+class UrlInfo
+{
 
-	static $_TSPEC;
-	public $source = null;
-	public $url = null;
-	public $longUrl = null;
-	public $ulUrl = null;
-	public $deeplinkUrl = null;
-	public $traFrom = null;
-	public $noEvokeUrl = null;
-	public $noEvokeLongUrl = null;
-	public $vipWxUrl = null;
-	public $vipWxCode = null;
-	public $vipQuickAppUrl = null;
+    static $_TSPEC;
+    public $source = null;
+    public $url = null;
+    public $longUrl = null;
+    public $ulUrl = null;
+    public $deeplinkUrl = null;
+    public $traFrom = null;
+    public $noEvokeUrl = null;
+    public $noEvokeLongUrl = null;
+    public $vipWxUrl = null;
+    public $vipWxCode = null;
+    public $vipQuickAppUrl = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'source'
-			),
-			2 => array(
-			'var' => 'url'
-			),
-			3 => array(
-			'var' => 'longUrl'
-			),
-			4 => array(
-			'var' => 'ulUrl'
-			),
-			5 => array(
-			'var' => 'deeplinkUrl'
-			),
-			6 => array(
-			'var' => 'traFrom'
-			),
-			7 => array(
-			'var' => 'noEvokeUrl'
-			),
-			8 => array(
-			'var' => 'noEvokeLongUrl'
-			),
-			9 => array(
-			'var' => 'vipWxUrl'
-			),
-			10 => array(
-			'var' => 'vipWxCode'
-			),
-			11 => array(
-			'var' => 'vipQuickAppUrl'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'source'
+                ),
+                2 => array(
+                    'var' => 'url'
+                ),
+                3 => array(
+                    'var' => 'longUrl'
+                ),
+                4 => array(
+                    'var' => 'ulUrl'
+                ),
+                5 => array(
+                    'var' => 'deeplinkUrl'
+                ),
+                6 => array(
+                    'var' => 'traFrom'
+                ),
+                7 => array(
+                    'var' => 'noEvokeUrl'
+                ),
+                8 => array(
+                    'var' => 'noEvokeLongUrl'
+                ),
+                9 => array(
+                    'var' => 'vipWxUrl'
+                ),
+                10 => array(
+                    'var' => 'vipWxCode'
+                ),
+                11 => array(
+                    'var' => 'vipQuickAppUrl'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['source'])){
+            if (isset($vals['source'])) {
 
-				$this->source = $vals['source'];
-			}
+                $this->source = $vals['source'];
+            }
 
 
-			if (isset($vals['url'])){
+            if (isset($vals['url'])) {
 
-				$this->url = $vals['url'];
-			}
+                $this->url = $vals['url'];
+            }
 
 
-			if (isset($vals['longUrl'])){
+            if (isset($vals['longUrl'])) {
 
-				$this->longUrl = $vals['longUrl'];
-			}
+                $this->longUrl = $vals['longUrl'];
+            }
 
 
-			if (isset($vals['ulUrl'])){
+            if (isset($vals['ulUrl'])) {
 
-				$this->ulUrl = $vals['ulUrl'];
-			}
+                $this->ulUrl = $vals['ulUrl'];
+            }
 
 
-			if (isset($vals['deeplinkUrl'])){
+            if (isset($vals['deeplinkUrl'])) {
 
-				$this->deeplinkUrl = $vals['deeplinkUrl'];
-			}
+                $this->deeplinkUrl = $vals['deeplinkUrl'];
+            }
 
 
-			if (isset($vals['traFrom'])){
+            if (isset($vals['traFrom'])) {
 
-				$this->traFrom = $vals['traFrom'];
-			}
+                $this->traFrom = $vals['traFrom'];
+            }
 
 
-			if (isset($vals['noEvokeUrl'])){
+            if (isset($vals['noEvokeUrl'])) {
 
-				$this->noEvokeUrl = $vals['noEvokeUrl'];
-			}
+                $this->noEvokeUrl = $vals['noEvokeUrl'];
+            }
 
 
-			if (isset($vals['noEvokeLongUrl'])){
+            if (isset($vals['noEvokeLongUrl'])) {
 
-				$this->noEvokeLongUrl = $vals['noEvokeLongUrl'];
-			}
+                $this->noEvokeLongUrl = $vals['noEvokeLongUrl'];
+            }
 
 
-			if (isset($vals['vipWxUrl'])){
+            if (isset($vals['vipWxUrl'])) {
 
-				$this->vipWxUrl = $vals['vipWxUrl'];
-			}
+                $this->vipWxUrl = $vals['vipWxUrl'];
+            }
 
 
-			if (isset($vals['vipWxCode'])){
+            if (isset($vals['vipWxCode'])) {
 
-				$this->vipWxCode = $vals['vipWxCode'];
-			}
+                $this->vipWxCode = $vals['vipWxCode'];
+            }
 
 
-			if (isset($vals['vipQuickAppUrl'])){
+            if (isset($vals['vipQuickAppUrl'])) {
 
-				$this->vipQuickAppUrl = $vals['vipQuickAppUrl'];
-			}
+                $this->vipQuickAppUrl = $vals['vipQuickAppUrl'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'UrlInfo';
-	}
+        return 'UrlInfo';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("source" == $schemeField){
+            if ("source" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->source);
+                $needSkip = false;
+                $input->readString($this->source);
 
-			}
+            }
 
 
+            if ("url" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->url);
 
-			if ("url" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->url);
 
-			}
+            if ("longUrl" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->longUrl);
 
+            }
 
 
-			if ("longUrl" == $schemeField){
+            if ("ulUrl" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->longUrl);
+                $needSkip = false;
+                $input->readString($this->ulUrl);
 
-			}
+            }
 
 
+            if ("deeplinkUrl" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->deeplinkUrl);
 
-			if ("ulUrl" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->ulUrl);
 
-			}
+            if ("traFrom" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->traFrom);
 
+            }
 
 
-			if ("deeplinkUrl" == $schemeField){
+            if ("noEvokeUrl" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->deeplinkUrl);
+                $needSkip = false;
+                $input->readString($this->noEvokeUrl);
 
-			}
+            }
 
 
+            if ("noEvokeLongUrl" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->noEvokeLongUrl);
 
-			if ("traFrom" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->traFrom);
 
-			}
+            if ("vipWxUrl" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->vipWxUrl);
 
+            }
 
 
-			if ("noEvokeUrl" == $schemeField){
+            if ("vipWxCode" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->noEvokeUrl);
+                $needSkip = false;
+                $input->readString($this->vipWxCode);
 
-			}
+            }
 
 
+            if ("vipQuickAppUrl" == $schemeField) {
 
+                $needSkip = false;
+                $input->readString($this->vipQuickAppUrl);
 
-			if ("noEvokeLongUrl" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readString($this->noEvokeLongUrl);
 
-			}
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
+            $input->readFieldEnd();
+        }
 
+        $input->readStructEnd();
 
-			if ("vipWxUrl" == $schemeField){
 
-				$needSkip = false;
-				$input->readString($this->vipWxUrl);
+    }
 
-			}
+    public function write($output)
+    {
 
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
+        if ($this->source !== null) {
 
+            $xfer += $output->writeFieldBegin('source');
+            $xfer += $output->writeString($this->source);
 
-			if ("vipWxCode" == $schemeField){
+            $xfer += $output->writeFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readString($this->vipWxCode);
 
-			}
+        if ($this->url !== null) {
 
+            $xfer += $output->writeFieldBegin('url');
+            $xfer += $output->writeString($this->url);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-			if ("vipQuickAppUrl" == $schemeField){
+        if ($this->longUrl !== null) {
 
-				$needSkip = false;
-				$input->readString($this->vipQuickAppUrl);
+            $xfer += $output->writeFieldBegin('longUrl');
+            $xfer += $output->writeString($this->longUrl);
 
-			}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
+        if ($this->ulUrl !== null) {
 
-			if($needSkip){
+            $xfer += $output->writeFieldBegin('ulUrl');
+            $xfer += $output->writeString($this->ulUrl);
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$input->readFieldEnd();
-		}
 
-		$input->readStructEnd();
+        if ($this->deeplinkUrl !== null) {
 
+            $xfer += $output->writeFieldBegin('deeplinkUrl');
+            $xfer += $output->writeString($this->deeplinkUrl);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-	}
 
-	public function write($output){
+        if ($this->traFrom !== null) {
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+            $xfer += $output->writeFieldBegin('traFrom');
+            $xfer += $output->writeString($this->traFrom);
 
-		if($this->source !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('source');
-			$xfer += $output->writeString($this->source);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->noEvokeUrl !== null) {
 
+            $xfer += $output->writeFieldBegin('noEvokeUrl');
+            $xfer += $output->writeString($this->noEvokeUrl);
 
-		if($this->url !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('url');
-			$xfer += $output->writeString($this->url);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->noEvokeLongUrl !== null) {
 
+            $xfer += $output->writeFieldBegin('noEvokeLongUrl');
+            $xfer += $output->writeString($this->noEvokeLongUrl);
 
-		if($this->longUrl !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('longUrl');
-			$xfer += $output->writeString($this->longUrl);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->vipWxUrl !== null) {
 
+            $xfer += $output->writeFieldBegin('vipWxUrl');
+            $xfer += $output->writeString($this->vipWxUrl);
 
-		if($this->ulUrl !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('ulUrl');
-			$xfer += $output->writeString($this->ulUrl);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->vipWxCode !== null) {
 
+            $xfer += $output->writeFieldBegin('vipWxCode');
+            $xfer += $output->writeString($this->vipWxCode);
 
-		if($this->deeplinkUrl !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('deeplinkUrl');
-			$xfer += $output->writeString($this->deeplinkUrl);
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->vipQuickAppUrl !== null) {
 
+            $xfer += $output->writeFieldBegin('vipQuickAppUrl');
+            $xfer += $output->writeString($this->vipQuickAppUrl);
 
-		if($this->traFrom !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('traFrom');
-			$xfer += $output->writeString($this->traFrom);
 
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->noEvokeUrl !== null) {
-
-			$xfer += $output->writeFieldBegin('noEvokeUrl');
-			$xfer += $output->writeString($this->noEvokeUrl);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->noEvokeLongUrl !== null) {
-
-			$xfer += $output->writeFieldBegin('noEvokeLongUrl');
-			$xfer += $output->writeString($this->noEvokeLongUrl);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->vipWxUrl !== null) {
-
-			$xfer += $output->writeFieldBegin('vipWxUrl');
-			$xfer += $output->writeString($this->vipWxUrl);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->vipWxCode !== null) {
-
-			$xfer += $output->writeFieldBegin('vipWxCode');
-			$xfer += $output->writeString($this->vipWxCode);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		if($this->vipQuickAppUrl !== null) {
-
-			$xfer += $output->writeFieldBegin('vipQuickAppUrl');
-			$xfer += $output->writeString($this->vipQuickAppUrl);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

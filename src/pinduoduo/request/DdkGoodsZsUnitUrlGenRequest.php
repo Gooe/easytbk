@@ -1,10 +1,11 @@
 <?php
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
+
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
-class DdkGoodsZsUnitUrlGenRequest implements  RequestInterface
+class DdkGoodsZsUnitUrlGenRequest implements RequestInterface
 {
 
     /**
@@ -26,8 +27,6 @@ class DdkGoodsZsUnitUrlGenRequest implements  RequestInterface
     private $source_url;
 
 
-
-
     public function setPid($pid)
     {
         $this->pid = $pid;
@@ -45,15 +44,15 @@ class DdkGoodsZsUnitUrlGenRequest implements  RequestInterface
 
     public function getSourceUrl()
     {
-        return $this->goodsIdList;
+        return $this->source_url;
     }
 
     public function getParams()
     {
         $params = [
-            'type'                   => $this->type,
-            'pid'                   => $this->pid,
-            'source_url'        => $this->source_url,
+            'type' => $this->type,
+            'pid' => $this->pid,
+            'source_url' => $this->source_url,
         ];
         return array_filter($params);
     }

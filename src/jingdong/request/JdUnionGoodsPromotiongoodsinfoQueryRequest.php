@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionGoodsPromotiongoodsinfoQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionGoodsPromotiongoodsinfoQueryRequest implements RequestInterface
 {
@@ -35,7 +35,7 @@ class JdUnionGoodsPromotiongoodsinfoQueryRequest implements RequestInterface
     /**
      * @param mixed $skuIds
      */
-    public function setSkuIds($skuIds): void
+    public function setSkuIds($skuIds)
     {
         $this->skuIds = $skuIds;
     }

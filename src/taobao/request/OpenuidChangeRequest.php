@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.openuid.change request
  *
@@ -58,8 +59,8 @@ class OpenuidChangeRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->openUid, "openUid");
-        RequestCheckUtil::checkNotNull ($this->targetAppKey, "targetAppKey");
+        RequestCheckUtil::checkNotNull($this->openUid, "openUid");
+        RequestCheckUtil::checkNotNull($this->targetAppKey, "targetAppKey");
     }
 
     public function putOtherTextParam($key, $value)

@@ -1,12 +1,12 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 /**
  * Class JdUnionOrderQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionOrderQueryRequest implements RequestInterface
 {
@@ -35,7 +35,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
      * 页码，返回第几页结果
      * @var
      */
-    private $pageNo ;
+    private $pageNo;
 
     /**
      * 页码
@@ -68,7 +68,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
     /**
      * @param mixed $time
      */
-    public function setTime($time): void
+    public function setTime($time)
     {
         $this->time = $time;
     }
@@ -84,7 +84,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
     /**
      * @param mixed $childUnionId
      */
-    public function setChildUnionId($childUnionId): void
+    public function setChildUnionId($childUnionId)
     {
         $this->childUnionId = $childUnionId;
     }
@@ -100,7 +100,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
     /**
      * @param mixed $pageNo
      */
-    public function setPageNo($pageNo): void
+    public function setPageNo($pageNo)
     {
         $this->pageNo = $pageNo;
     }
@@ -116,7 +116,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
     /**
      * @param mixed $pageSize
      */
-    public function setPageSize($pageSize): void
+    public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
     }
@@ -132,7 +132,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
     /**
      * @param mixed $type
      */
-    public function setType($type): void
+    public function setType($type)
     {
         $this->type = $type;
     }
@@ -148,7 +148,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
     /**
      * @param mixed $key
      */
-    public function setKey($key): void
+    public function setKey($key)
     {
         $this->key = $key;
     }
@@ -177,7 +177,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
         ];
 
         return json_encode([
-            'orderReq' => array_filter ($params, function ($val) {
+            'orderReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

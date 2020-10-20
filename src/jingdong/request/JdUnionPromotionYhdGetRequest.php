@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionPromotionYhdGetRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionPromotionYhdGetRequest implements RequestInterface
 {
@@ -65,7 +65,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
     /**
      * @param mixed $subUnionId
      */
-    public function setSubUnionId($subUnionId): void
+    public function setSubUnionId($subUnionId)
     {
         $this->subUnionId = $subUnionId;
     }
@@ -81,7 +81,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
     /**
      * @param mixed $protocol
      */
-    public function setProtocol($protocol): void
+    public function setProtocol($protocol)
     {
         $this->protocol = $protocol;
     }
@@ -97,7 +97,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
     /**
      * @param mixed $ext1
      */
-    public function setExt1($ext1): void
+    public function setExt1($ext1)
     {
         $this->ext1 = $ext1;
     }
@@ -113,7 +113,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
     /**
      * @param mixed $siteId
      */
-    public function setSiteId($siteId): void
+    public function setSiteId($siteId)
     {
         $this->siteId = $siteId;
     }
@@ -129,7 +129,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
     /**
      * @param mixed $materialId
      */
-    public function setMaterialId($materialId): void
+    public function setMaterialId($materialId)
     {
         $this->materialId = $materialId;
     }
@@ -145,7 +145,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
     /**
      * @param mixed $positionId
      */
-    public function setPositionId($positionId): void
+    public function setPositionId($positionId)
     {
         $this->positionId = $positionId;
     }
@@ -174,7 +174,7 @@ class JdUnionPromotionYhdGetRequest implements RequestInterface
         ];
 
         return json_encode([
-            'promotionCodeReq' => array_filter ($params, function ($val) {
+            'promotionCodeReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

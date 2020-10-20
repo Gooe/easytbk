@@ -6,9 +6,9 @@
  * @date   2015-10-28
  */
 
-namespace NiuGengYun\EasyTBK\SuNing\Request\Union;
+namespace YearDley\EasyTBK\SuNing\Request\Union;
 
-use NiuGengYun\EasyTBK\SuNing\SelectSuningRequest;
+use YearDley\EasyTBK\SuNing\SelectSuningRequest;
 
 class UnionInfomationQueryRequest extends SelectSuningRequest
 {
@@ -23,9 +23,9 @@ class UnionInfomationQueryRequest extends SelectSuningRequest
         return $this->apiParams;
     }
 
-    public function check()
+    public function check($pageNoMin = 1, $pageNoMax = 99999, $pageSizeMin = 10, $pageSizeMax = 50)
     {
-        //非空校验
+
     }
 
     public function getBizName()

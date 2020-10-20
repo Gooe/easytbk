@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionCategoryGoodsGetRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionCategoryGoodsGetRequest implements RequestInterface
 {
@@ -50,7 +50,7 @@ class JdUnionCategoryGoodsGetRequest implements RequestInterface
         ];
 
         return json_encode([
-            'req' => array_filter ($params, function ($val) {
+            'req' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

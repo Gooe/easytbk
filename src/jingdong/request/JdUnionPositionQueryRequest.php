@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionPositionQueryRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionPositionQueryRequest implements RequestInterface
 {
@@ -59,7 +59,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
     /**
      * @param mixed $unionType
      */
-    public function setUnionType($unionType): void
+    public function setUnionType($unionType)
     {
         $this->unionType = $unionType;
     }
@@ -75,7 +75,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
     /**
      * @param mixed $pageSize
      */
-    public function setPageSize($pageSize): void
+    public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
     }
@@ -91,7 +91,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
     /**
      * @param mixed $unionId
      */
-    public function setUnionId($unionId): void
+    public function setUnionId($unionId)
     {
         $this->unionId = $unionId;
     }
@@ -107,7 +107,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
     /**
      * @param mixed $key
      */
-    public function setKey($key): void
+    public function setKey($key)
     {
         $this->key = $key;
     }
@@ -123,7 +123,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
     /**
      * @param mixed $pageIndex
      */
-    public function setPageIndex($pageIndex): void
+    public function setPageIndex($pageIndex)
     {
         $this->pageIndex = $pageIndex;
     }
@@ -151,7 +151,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
         ];
 
         return json_encode([
-            'positionReq' => array_filter ($params, function ($val) {
+            'positionReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

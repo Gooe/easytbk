@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.openim.users.get request
  *
@@ -42,8 +43,8 @@ class OpenimUsersGetRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->userids, "userids");
-        RequestCheckUtil::checkMaxListSize ($this->userids, 100, "userids");
+        RequestCheckUtil::checkNotNull($this->userids, "userids");
+        RequestCheckUtil::checkMaxListSize($this->userids, 100, "userids");
     }
 
     public function putOtherTextParam($key, $value)

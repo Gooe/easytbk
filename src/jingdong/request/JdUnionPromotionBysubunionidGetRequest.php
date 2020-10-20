@@ -1,13 +1,13 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace YearDley\EasyTBK\JingDong\Request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use YearDley\EasyTBK\JingDong\RequestInterface;
 
 
 /**
  * Class JdUnionPromotionBysubunionidGetRequest
- * @package NiuGengYun\EasyTBK\JingDong\Request
+ * @package YearDley\EasyTBK\JingDong\Request
  */
 class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
 {
@@ -59,7 +59,7 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
     /**
      * @param mixed $subUnionId
      */
-    public function setSubUnionId($subUnionId): void
+    public function setSubUnionId($subUnionId)
     {
         $this->subUnionId = $subUnionId;
     }
@@ -75,7 +75,7 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
     /**
      * @param mixed $materialId
      */
-    public function setMaterialId($materialId): void
+    public function setMaterialId($materialId)
     {
         $this->materialId = $materialId;
     }
@@ -91,7 +91,7 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
     /**
      * @param mixed $positionId
      */
-    public function setPositionId($positionId): void
+    public function setPositionId($positionId)
     {
         $this->positionId = $positionId;
     }
@@ -107,7 +107,7 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
     /**
      * @param mixed $pid
      */
-    public function setPid($pid): void
+    public function setPid($pid)
     {
         $this->pid = $pid;
     }
@@ -123,11 +123,10 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
     /**
      * @param mixed $couponUrl
      */
-    public function setCouponUrl($couponUrl): void
+    public function setCouponUrl($couponUrl)
     {
         $this->couponUrl = $couponUrl;
     }
-
 
 
     /**
@@ -144,15 +143,15 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
     public function getParamJson()
     {
         $params = [
-            'subUnionId' =>$this->subUnionId,
-            'materialId' =>$this->materialId,
-            'positionId' =>$this->positionId,
-            'pid' =>$this->pid,
-            'couponUrl' =>$this->couponUrl,
+            'subUnionId' => $this->subUnionId,
+            'materialId' => $this->materialId,
+            'positionId' => $this->positionId,
+            'pid' => $this->pid,
+            'couponUrl' => $this->couponUrl,
         ];
 
         return json_encode([
-            'promotionCodeReq' => array_filter ($params, function ($val) {
+            'promotionCodeReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);

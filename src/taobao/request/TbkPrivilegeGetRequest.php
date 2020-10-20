@@ -1,8 +1,9 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace YearDley\EasyTBK\TaoBao\Request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use YearDley\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.privilege.get request
  *
@@ -41,20 +42,20 @@ class TbkPrivilegeGetRequest
      * @var
      */
     private $relationId;
-    
-    
+
+
     /**
      * 会员运营ID
      * @var
      */
     private $specialId;
 
-     /**
-     * 	淘宝客外部用户标记，如自身系统账户ID；微信ID等
+    /**
+     *    淘宝客外部用户标记，如自身系统账户ID；微信ID等
      * @var
      */
     private $externalId;
-    
+
     private $apiParas = array();
 
     public function setAdzoneId($adzoneId)
@@ -129,8 +130,8 @@ class TbkPrivilegeGetRequest
         $this->apiParas["relation_id"] = $relationId;
     }
 
-    
-   /**
+
+    /**
      * @return mixed
      */
     public function getSpecialId()
@@ -147,7 +148,7 @@ class TbkPrivilegeGetRequest
         $this->apiParas["special_id"] = $specialId;
     }
 
-    
+
     /**
      * @return mixed
      */
@@ -165,7 +166,6 @@ class TbkPrivilegeGetRequest
         $this->apiParas["external_id"] = $externalId;
     }
 
-    
 
     public function getApiMethodName()
     {
@@ -180,9 +180,9 @@ class TbkPrivilegeGetRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->adzoneId, "adzoneId");
-        RequestCheckUtil::checkNotNull ($this->itemId, "itemId");
-        RequestCheckUtil::checkNotNull ($this->siteId, "siteId");
+        RequestCheckUtil::checkNotNull($this->adzoneId, "adzoneId");
+        RequestCheckUtil::checkNotNull($this->itemId, "itemId");
+        RequestCheckUtil::checkNotNull($this->siteId, "siteId");
     }
 
     public function putOtherTextParam($key, $value)

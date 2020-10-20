@@ -8,125 +8,126 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class StoreInfo {
+class StoreInfo
+{
 
-	static $_TSPEC;
-	public $storeId = null;
-	public $storeName = null;
+    static $_TSPEC;
+    public $storeId = null;
+    public $storeName = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'storeId'
-			),
-			2 => array(
-			'var' => 'storeName'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'storeId'
+                ),
+                2 => array(
+                    'var' => 'storeName'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
-
-
-			if (isset($vals['storeId'])){
-
-				$this->storeId = $vals['storeId'];
-			}
+        if (is_array($vals)) {
 
 
-			if (isset($vals['storeName'])){
+            if (isset($vals['storeId'])) {
 
-				$this->storeName = $vals['storeName'];
-			}
-
-
-		}
-
-	}
+                $this->storeId = $vals['storeId'];
+            }
 
 
-	public function getName(){
+            if (isset($vals['storeName'])) {
 
-		return 'StoreInfo';
-	}
-
-	public function read($input){
-
-		$input->readStructBegin();
-		while(true){
-
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+                $this->storeName = $vals['storeName'];
+            }
 
 
-			if ("storeId" == $schemeField){
+        }
 
-				$needSkip = false;
-				$input->readString($this->storeId);
-
-			}
+    }
 
 
+    public function getName()
+    {
+
+        return 'StoreInfo';
+    }
+
+    public function read($input)
+    {
+
+        $input->readStructBegin();
+        while (true) {
+
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("storeName" == $schemeField){
+            if ("storeId" == $schemeField) {
 
-				$needSkip = false;
-				$input->readString($this->storeName);
+                $needSkip = false;
+                $input->readString($this->storeId);
 
-			}
-
-
-
-			if($needSkip){
-
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
-
-			$input->readFieldEnd();
-		}
-
-		$input->readStructEnd();
+            }
 
 
+            if ("storeName" == $schemeField) {
 
-	}
+                $needSkip = false;
+                $input->readString($this->storeName);
 
-	public function write($output){
-
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
-
-		if($this->storeId !== null) {
-
-			$xfer += $output->writeFieldBegin('storeId');
-			$xfer += $output->writeString($this->storeId);
-
-			$xfer += $output->writeFieldEnd();
-		}
+            }
 
 
-		if($this->storeName !== null) {
+            if ($needSkip) {
 
-			$xfer += $output->writeFieldBegin('storeName');
-			$xfer += $output->writeString($this->storeName);
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $input->readFieldEnd();
+        }
+
+        $input->readStructEnd();
 
 
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+    }
+
+    public function write($output)
+    {
+
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
+
+        if ($this->storeId !== null) {
+
+            $xfer += $output->writeFieldBegin('storeId');
+            $xfer += $output->writeString($this->storeId);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        if ($this->storeName !== null) {
+
+            $xfer += $output->writeFieldBegin('storeName');
+            $xfer += $output->writeString($this->storeName);
+
+            $xfer += $output->writeFieldEnd();
+        }
+
+
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 

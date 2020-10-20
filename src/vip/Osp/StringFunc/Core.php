@@ -19,19 +19,22 @@
  *
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\StringFunc;
+namespace YearDley\EasyTBK\Vip\Osp\StringFunc;
 
 
-class Core implements StringFunc {
-    public function substr($str, $start, $length = null) {
+class Core implements StringFunc
+{
+    public function substr($str, $start, $length = null)
+    {
         // specifying a null $length would return an empty string
-        if($length === null) {
+        if ($length === null) {
             return substr($str, $start);
         }
         return substr($str, $start, $length);
     }
 
-    public function strlen($str) {
+    public function strlen($str)
+    {
         return strlen($str);
     }
 }

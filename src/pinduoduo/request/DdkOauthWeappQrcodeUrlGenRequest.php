@@ -1,10 +1,11 @@
 <?php
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+namespace YearDley\EasyTBK\PinDuoDuo\Request;
+
+use YearDley\EasyTBK\PinDuoDuo\RequestInterface;
 
 
-class DdkOauthWeappQrcodeUrlGenRequest implements  RequestInterface
+class DdkOauthWeappQrcodeUrlGenRequest implements RequestInterface
 {
 
     /**
@@ -36,7 +37,6 @@ class DdkOauthWeappQrcodeUrlGenRequest implements  RequestInterface
      * @var
      */
     private $zsduoId;
-
 
 
     public function setPid($pid)
@@ -82,11 +82,11 @@ class DdkOauthWeappQrcodeUrlGenRequest implements  RequestInterface
     public function getParams()
     {
         $params = [
-            'type'                   => $this->type,
-            'p_id'                   => $this->pid,
-            'goods_id_list'          => $this->goodsIdList,
-            'custom_parameters'      => $this->customParameters,
-            'zs_duo_id'              => $this->zsduoId,
+            'type' => $this->type,
+            'p_id' => $this->pid,
+            'goods_id_list' => $this->goodsIdList,
+            'custom_parameters' => $this->customParameters,
+            'zs_duo_id' => $this->zsduoId,
         ];
         return array_filter($params);
     }

@@ -8,290 +8,280 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace YearDley\EasyTBK\Vip\Request;
 
-class RefundOrderRequest {
+class RefundOrderRequest
+{
 
-	static $_TSPEC;
-	public $searchType = null;
-	public $searchTimeStart = null;
-	public $searchTimeEnd = null;
-	public $orderSns = null;
-	public $page = null;
-	public $pageSize = null;
-	public $requestId = null;
+    static $_TSPEC;
+    public $searchType = null;
+    public $searchTimeStart = null;
+    public $searchTimeEnd = null;
+    public $orderSns = null;
+    public $page = null;
+    public $pageSize = null;
+    public $requestId = null;
 
-	public function __construct($vals=null){
+    public function __construct($vals = null)
+    {
 
-		if (!isset(self::$_TSPEC)){
+        if (!isset(self::$_TSPEC)) {
 
-			self::$_TSPEC = array(
-			1 => array(
-			'var' => 'searchType'
-			),
-			2 => array(
-			'var' => 'searchTimeStart'
-			),
-			3 => array(
-			'var' => 'searchTimeEnd'
-			),
-			4 => array(
-			'var' => 'orderSns'
-			),
-			5 => array(
-			'var' => 'page'
-			),
-			6 => array(
-			'var' => 'pageSize'
-			),
-			7 => array(
-			'var' => 'requestId'
-			),
+            self::$_TSPEC = array(
+                1 => array(
+                    'var' => 'searchType'
+                ),
+                2 => array(
+                    'var' => 'searchTimeStart'
+                ),
+                3 => array(
+                    'var' => 'searchTimeEnd'
+                ),
+                4 => array(
+                    'var' => 'orderSns'
+                ),
+                5 => array(
+                    'var' => 'page'
+                ),
+                6 => array(
+                    'var' => 'pageSize'
+                ),
+                7 => array(
+                    'var' => 'requestId'
+                ),
 
-			);
+            );
 
-		}
+        }
 
-		if (is_array($vals)){
+        if (is_array($vals)) {
 
 
-			if (isset($vals['searchType'])){
+            if (isset($vals['searchType'])) {
 
-				$this->searchType = $vals['searchType'];
-			}
+                $this->searchType = $vals['searchType'];
+            }
 
 
-			if (isset($vals['searchTimeStart'])){
+            if (isset($vals['searchTimeStart'])) {
 
-				$this->searchTimeStart = $vals['searchTimeStart'];
-			}
+                $this->searchTimeStart = $vals['searchTimeStart'];
+            }
 
 
-			if (isset($vals['searchTimeEnd'])){
+            if (isset($vals['searchTimeEnd'])) {
 
-				$this->searchTimeEnd = $vals['searchTimeEnd'];
-			}
+                $this->searchTimeEnd = $vals['searchTimeEnd'];
+            }
 
 
-			if (isset($vals['orderSns'])){
+            if (isset($vals['orderSns'])) {
 
-				$this->orderSns = $vals['orderSns'];
-			}
+                $this->orderSns = $vals['orderSns'];
+            }
 
 
-			if (isset($vals['page'])){
+            if (isset($vals['page'])) {
 
-				$this->page = $vals['page'];
-			}
+                $this->page = $vals['page'];
+            }
 
 
-			if (isset($vals['pageSize'])){
+            if (isset($vals['pageSize'])) {
 
-				$this->pageSize = $vals['pageSize'];
-			}
+                $this->pageSize = $vals['pageSize'];
+            }
 
 
-			if (isset($vals['requestId'])){
+            if (isset($vals['requestId'])) {
 
-				$this->requestId = $vals['requestId'];
-			}
+                $this->requestId = $vals['requestId'];
+            }
 
 
-		}
+        }
 
-	}
+    }
 
 
-	public function getName(){
+    public function getName()
+    {
 
-		return 'RefundOrderRequest';
-	}
+        return 'RefundOrderRequest';
+    }
 
-	public function read($input){
+    public function read($input)
+    {
 
-		$input->readStructBegin();
-		while(true){
+        $input->readStructBegin();
+        while (true) {
 
-			$schemeField = $input->readFieldBegin();
-			if ($schemeField == null) break;
-			$needSkip = true;
+            $schemeField = $input->readFieldBegin();
+            if ($schemeField == null) break;
+            $needSkip = true;
 
 
-			if ("searchType" == $schemeField){
+            if ("searchType" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->searchType);
+                $needSkip = false;
+                $input->readI32($this->searchType);
 
-			}
+            }
 
 
+            if ("searchTimeStart" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->searchTimeStart);
 
-			if ("searchTimeStart" == $schemeField){
+            }
 
-				$needSkip = false;
-				$input->readI64($this->searchTimeStart);
 
-			}
+            if ("searchTimeEnd" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI64($this->searchTimeEnd);
 
+            }
 
 
-			if ("searchTimeEnd" == $schemeField){
+            if ("orderSns" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI64($this->searchTimeEnd);
+                $needSkip = false;
 
-			}
+                $this->orderSns = array();
+                $_size0 = 0;
+                $input->readListBegin();
+                while (true) {
 
+                    try {
 
+                        $elem0 = null;
+                        $input->readString($elem0);
 
+                        $this->orderSns[$_size0++] = $elem0;
+                    } catch (\Exception $e) {
 
-			if ("orderSns" == $schemeField){
+                        break;
+                    }
+                }
 
-				$needSkip = false;
+                $input->readListEnd();
 
-				$this->orderSns = array();
-				$_size0 = 0;
-				$input->readListBegin();
-				while(true){
+            }
 
-					try{
 
-						$elem0 = null;
-						$input->readString($elem0);
+            if ("page" == $schemeField) {
 
-						$this->orderSns[$_size0++] = $elem0;
-					}
-					catch(\Exception $e){
+                $needSkip = false;
+                $input->readI32($this->page);
 
-						break;
-					}
-				}
+            }
 
-				$input->readListEnd();
 
-			}
+            if ("pageSize" == $schemeField) {
 
+                $needSkip = false;
+                $input->readI32($this->pageSize);
 
+            }
 
 
-			if ("page" == $schemeField){
+            if ("requestId" == $schemeField) {
 
-				$needSkip = false;
-				$input->readI32($this->page);
+                $needSkip = false;
+                $input->readString($this->requestId);
 
-			}
+            }
 
 
+            if ($needSkip) {
 
+                \YearDley\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+            }
 
-			if ("pageSize" == $schemeField){
+            $input->readFieldEnd();
+        }
 
-				$needSkip = false;
-				$input->readI32($this->pageSize);
+        $input->readStructEnd();
 
-			}
 
+    }
 
+    public function write($output)
+    {
 
+        $xfer = 0;
+        $xfer += $output->writeStructBegin();
 
-			if ("requestId" == $schemeField){
+        $xfer += $output->writeFieldBegin('searchType');
+        $xfer += $output->writeI32($this->searchType);
 
-				$needSkip = false;
-				$input->readString($this->requestId);
+        $xfer += $output->writeFieldEnd();
 
-			}
+        if ($this->searchTimeStart !== null) {
 
+            $xfer += $output->writeFieldBegin('searchTimeStart');
+            $xfer += $output->writeI64($this->searchTimeStart);
 
+            $xfer += $output->writeFieldEnd();
+        }
 
-			if($needSkip){
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
-			}
+        if ($this->searchTimeEnd !== null) {
 
-			$input->readFieldEnd();
-		}
+            $xfer += $output->writeFieldBegin('searchTimeEnd');
+            $xfer += $output->writeI64($this->searchTimeEnd);
 
-		$input->readStructEnd();
+            $xfer += $output->writeFieldEnd();
+        }
 
 
+        if ($this->orderSns !== null) {
 
-	}
+            $xfer += $output->writeFieldBegin('orderSns');
 
-	public function write($output){
+            if (!is_array($this->orderSns)) {
 
-		$xfer = 0;
-		$xfer += $output->writeStructBegin();
+                throw new \YearDley\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \YearDley\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+            }
 
-		$xfer += $output->writeFieldBegin('searchType');
-		$xfer += $output->writeI32($this->searchType);
+            $output->writeListBegin();
+            foreach ($this->orderSns as $iter0) {
 
-		$xfer += $output->writeFieldEnd();
+                $xfer += $output->writeString($iter0);
 
-		if($this->searchTimeStart !== null) {
+            }
 
-			$xfer += $output->writeFieldBegin('searchTimeStart');
-			$xfer += $output->writeI64($this->searchTimeStart);
+            $output->writeListEnd();
 
-			$xfer += $output->writeFieldEnd();
-		}
+            $xfer += $output->writeFieldEnd();
+        }
 
 
-		if($this->searchTimeEnd !== null) {
+        $xfer += $output->writeFieldBegin('page');
+        $xfer += $output->writeI32($this->page);
 
-			$xfer += $output->writeFieldBegin('searchTimeEnd');
-			$xfer += $output->writeI64($this->searchTimeEnd);
+        $xfer += $output->writeFieldEnd();
 
-			$xfer += $output->writeFieldEnd();
-		}
+        if ($this->pageSize !== null) {
 
+            $xfer += $output->writeFieldBegin('pageSize');
+            $xfer += $output->writeI32($this->pageSize);
 
-		if($this->orderSns !== null) {
+            $xfer += $output->writeFieldEnd();
+        }
 
-			$xfer += $output->writeFieldBegin('orderSns');
 
-			if (!is_array($this->orderSns)){
+        $xfer += $output->writeFieldBegin('requestId');
+        $xfer += $output->writeString($this->requestId);
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
-			}
+        $xfer += $output->writeFieldEnd();
 
-			$output->writeListBegin();
-			foreach ($this->orderSns as $iter0){
-
-				$xfer += $output->writeString($iter0);
-
-			}
-
-			$output->writeListEnd();
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldBegin('page');
-		$xfer += $output->writeI32($this->page);
-
-		$xfer += $output->writeFieldEnd();
-
-		if($this->pageSize !== null) {
-
-			$xfer += $output->writeFieldBegin('pageSize');
-			$xfer += $output->writeI32($this->pageSize);
-
-			$xfer += $output->writeFieldEnd();
-		}
-
-
-		$xfer += $output->writeFieldBegin('requestId');
-		$xfer += $output->writeString($this->requestId);
-
-		$xfer += $output->writeFieldEnd();
-
-		$xfer += $output->writeFieldStop();
-		$xfer += $output->writeStructEnd();
-		return $xfer;
-	}
+        $xfer += $output->writeFieldStop();
+        $xfer += $output->writeStructEnd();
+        return $xfer;
+    }
 
 }
 
