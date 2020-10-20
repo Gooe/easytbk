@@ -4,8 +4,8 @@ require '../vendor/autoload.php';
 
 
 $client = \YearDley\EasyTBK\Factory::jingdong([
-    'app_key' => '91e005b22746d8e624a9b1356ca2d2b4',
-    'app_secret' => 'cc9ab71a4ddf490b864d00a3773bd891',
+    'app_key' => 'JD_APP_KEY',
+    'app_secret' => 'JD_APP_SECRET',
     'format' => 'json'
 ]);
 
