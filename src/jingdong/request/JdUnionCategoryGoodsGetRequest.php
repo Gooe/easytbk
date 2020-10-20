@@ -22,13 +22,13 @@ class JdUnionCategoryGoodsGetRequest implements RequestInterface
      * 父类目id(一级父类目为0)
      * @var
      */
-    private $parentId;
+    private $parentId = 0;
 
     /**
      * 类目级别(类目级别 0，1，2 代表一、二、三级类目)
      * @var
      */
-    private $grade;
+    private $grade = 0;
 
 
     /**
