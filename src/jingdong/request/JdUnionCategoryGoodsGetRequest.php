@@ -65,11 +65,7 @@ class JdUnionCategoryGoodsGetRequest implements RequestInterface
             'grade' => $this->grade
         ];
 
-        return json_encode([
-            'req' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['req' => $params]);
     }
 
 
