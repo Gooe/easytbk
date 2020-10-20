@@ -40,6 +40,22 @@ class JdUnionCategoryGoodsGetRequest implements RequestInterface
     }
 
     /**
+     * @param mixed $grade
+     */
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
+    }
+
+    /**
+     * @param mixed $parentId
+     */
+    public function setParentId($parentId)
+    {
+        $this->parentId = $parentId;
+    }
+
+    /**
      * @return mixed
      */
     public function getParamJson()
