@@ -150,11 +150,7 @@ class JdUnionUserPidGetRequest implements RequestInterface
             'positionName' => $this->positionName
         ];
 
-        return json_encode([
-            'pidReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['pidReq' => $params]);
     }
 
 

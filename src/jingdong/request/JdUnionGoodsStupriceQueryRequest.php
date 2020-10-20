@@ -334,11 +334,7 @@ class JdUnionGoodsStupriceQueryRequest implements RequestInterface
             'owner' => $this->owner,
         ];
 
-        return json_encode([
-            'goodsReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['goodsReq' => $params]);
     }
 
 

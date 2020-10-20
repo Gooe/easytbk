@@ -150,11 +150,7 @@ class JdUnionPromotionBysubunionidGetRequest implements RequestInterface
             'couponUrl' => $this->couponUrl,
         ];
 
-        return json_encode([
-            'promotionCodeReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['promotionCodeReq' => $params]);
     }
 
 

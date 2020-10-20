@@ -54,9 +54,7 @@ class JdUnionCouponQueryRequest implements RequestInterface
     public function getParamJson()
     {
 
-        return json_encode([
-            'couponUrls' => $this->couponUrls
-        ]);
+        return json_encode(['couponUrls' => $this->couponUrls]);
     }
 
 

@@ -54,9 +54,7 @@ class JdUnionGoodsPromotiongoodsinfoQueryRequest implements RequestInterface
      */
     public function getParamJson()
     {
-        return json_encode([
-            'skuIds' => $this->skuIds
-        ]);
+        return json_encode(['skuIds' => $this->skuIds]);
     }
 
 

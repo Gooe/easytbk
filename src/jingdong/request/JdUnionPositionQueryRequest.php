@@ -150,11 +150,7 @@ class JdUnionPositionQueryRequest implements RequestInterface
             'pageIndex' => $this->pageIndex,
         ];
 
-        return json_encode([
-            'positionReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['positionReq' => $params]);
     }
 
 

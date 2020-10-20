@@ -197,11 +197,7 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
             'chainType' => $this->chainType,
         ];
 
-        return json_encode([
-            'promotionCodeReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['promotionCodeReq' => $params]);
     }
 
 

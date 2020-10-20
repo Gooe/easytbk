@@ -611,11 +611,7 @@ class JdUnionGoodsQueryRequest implements RequestInterface
             'pid' => $this->pid,
         ];
 
-        return json_encode([
-            'goodsReqDTO' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['goodsReqDTO' => $params]);
     }
 
 

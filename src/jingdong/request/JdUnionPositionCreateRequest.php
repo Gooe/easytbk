@@ -174,11 +174,7 @@ class JdUnionPositionCreateRequest implements RequestInterface
             'key' => $this->key,
         ];
 
-        return json_encode([
-            'positionReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['positionReq' => $params]);
     }
 
 

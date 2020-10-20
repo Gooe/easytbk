@@ -80,11 +80,7 @@ class JdUnionCouponImportationRequest implements RequestInterface
             'couponLink' => $this->couponLink
         ];
 
-        return json_encode([
-            'couponReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['couponReq' => $params]);
     }
 
 

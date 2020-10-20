@@ -150,11 +150,7 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
             'pageIndex' => $this->pageIndex
         ];
 
-        return json_encode([
-            'goodsReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['goodsReq' => $params]);
     }
 
 

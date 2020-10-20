@@ -176,11 +176,7 @@ class JdUnionOrderQueryRequest implements RequestInterface
             'key' => $this->key,
         ];
 
-        return json_encode([
-            'orderReq' => array_filter($params, function ($val) {
-                return $val != null;
-            })
-        ]);
+        return json_encode(['orderReq' => $params]);
     }
 
 
