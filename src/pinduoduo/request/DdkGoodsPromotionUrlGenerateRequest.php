@@ -68,6 +68,8 @@ class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
      */
     private $generateWeApp;
 
+    private $search_id;
+
 
     public function setPid($pid)
     {
@@ -159,6 +161,15 @@ class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
         return $this->generateWeApp;
     }
 
+    /**
+     * @param mixed $search_id
+     */
+    public function setSearchId($search_id)
+    {
+        $this->search_id = $search_id;
+    }
+
+
     public function getParams()
     {
         $params = [
@@ -169,6 +180,7 @@ class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
             'multi_group' => $this->multiGroup,
             'custom_parameters' => $this->customParameters,
             'pull_new' => $this->pullNew,
+            'search_id' => $this->search_id,
             'generate_weapp_webview' => $this->generateWeappWebview,
             'zs_duo_id' => $this->zsduoId,
             'generate_we_app' => $this->generateWeApp,
