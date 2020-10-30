@@ -70,6 +70,16 @@ class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
 
     private $search_id;
 
+    protected $generate_authority_url;
+
+    /**
+     * @param mixed $generate_authority_url
+     */
+    public function setGenerateAuthorityUrl($generate_authority_url)
+    {
+        $this->generate_authority_url = $generate_authority_url;
+    }
+
 
     public function setPid($pid)
     {
@@ -184,7 +194,8 @@ class DdkGoodsPromotionUrlGenerateRequest implements RequestInterface
             'generate_weapp_webview' => $this->generateWeappWebview,
             'zs_duo_id' => $this->zsduoId,
             'generate_we_app' => $this->generateWeApp,
-            'generate_schema_url' => "true"
+            'generate_schema_url' => "true",
+            'generate_authority_url' => $this->generate_authority_url,
         ];
         return array_filter($params);
     }
